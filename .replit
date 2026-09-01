@@ -1,0 +1,21 @@
+modules = ["nodejs-20"]
+run = "npm install && npm run dev"
+entrypoint = "src/main.tsx"
+
+[nix]
+channel = "stable-24_05"
+
+# Expose the Vite dev server (5173) on the public preview URL.
+[[ports]]
+localPort = 5173
+externalPort = 80
+
+# One-time install when the repl boots.
+[env]
+NODE_ENV = "development"
+
+# Static deployment: build the SPA and serve dist/.
+[deployment]
+deploymentTarget = "static"
+publicDir = "dist"
+build = ["sh", "-c", "npm install && npm run build"]
