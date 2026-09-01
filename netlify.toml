@@ -1,5 +1,10 @@
 [[redirects]]
+  from = "https://web.ringaapp.com/*"
+  to = "https://www.ringaapp.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
-
