@@ -1,4 +1,4 @@
-# RINGA — Landing Page
+# RINGA - Landing Page
 
 Marketing landing page for **RINGA**, a proximity-based social app that shows real
 people physically near you in real time. Rebuilt as a **React + TypeScript + Vite**
@@ -10,7 +10,7 @@ SPA styled with **Tailwind CSS v4** and animated with **Framer Motion**.
 - **Animated proximity radar** hero visual (rotating sweep + pulsing "nearby" blips).
 - **Scroll-reveal** entrances, staggered feature grid, mouse-follow card glow,
   spring-based hover/press feedback.
-- Fully **`prefers-reduced-motion` aware** — animations collapse to instant for users
+- Fully **`prefers-reduced-motion` aware** - animations collapse to instant for users
   who request reduced motion.
 - Routed **Terms** (`/terms`) and **Privacy** (`/privacy`) pages.
 

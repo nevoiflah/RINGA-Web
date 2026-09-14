@@ -16,7 +16,7 @@ export default function Footer() {
           {/* brand */}
           <div className="max-w-xs">
             <span className="inline-flex items-center gap-2">
-              <InfinityLogo className="h-5 w-10" />
+              <InfinityLogo className="h-9 w-9" />
               <span className="text-gradient text-2xl font-black tracking-wide">RINGA</span>
             </span>
             <p className="mt-3.5 text-[0.92rem] leading-relaxed text-muted">{t.cta.body}</p>

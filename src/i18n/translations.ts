@@ -61,14 +61,14 @@ export type Dict = {
 
 export const translations: Record<Lang, Dict> = {
   he: {
-    meta: { title: "RINGA — פגוש אנשים בקרבתך" },
+    meta: { title: "RINGA - פגוש אנשים בקרבתך" },
     nav: { features: "פיצ'רים", how: "איך זה עובד", download: "הורד עכשיו" },
     hero: {
       badge: "בקרוב ב-iOS וב-Android",
       titleLine1: "גלה מי נמצא",
       titleLine2: "סביבך",
       accent: "ממש עכשיו.",
-      sub: "RINGA מראה לך אנשים אמיתיים שנמצאים עד 200 מטר ממך — בבית הקפה, בבר, או בכל מקום שאתה נמצא.",
+      sub: "RINGA מראה לך אנשים אמיתיים שנמצאים עד 200 מטר ממך - בבית הקפה, בבר, או בכל מקום שאתה נמצא.",
       scroll: "גלול למטה",
     },
     badges: {
@@ -81,17 +81,17 @@ export const translations: Record<Lang, Dict> = {
     features: {
       eyebrow: "פיצ'רים",
       title: "הכל כאן. לשם כך בנינו את זה.",
-      sub: "פרטיות, ביטחון, וחיבורים אמיתיים — ברגע שבו הם קורים.",
+      sub: "פרטיות, ביטחון, וחיבורים אמיתיים - ברגע שבו הם קורים.",
       items: [
         {
           icon: "radar",
           title: 'מכ"ם קרבה חי',
-          desc: "ראה מי נמצא בטווח של 75–200 מטר ממך בזמן אמת. אם הם מופיעים — הם באמת שם.",
+          desc: "ראה מי נמצא בטווח של 75-200 מטר ממך בזמן אמת. אם הם מופיעים - הם באמת שם.",
         },
         {
           icon: "timer",
           title: "עיכוב הודעה ראשונה",
-          desc: "בחר כמה זמן ההודעה הראשונה שלך תחכה — עד 8 שעות. מפחית לחץ ומונע הטרדות.",
+          desc: "בחר כמה זמן ההודעה הראשונה שלך תחכה - עד 8 שעות. מפחית לחץ ומונע הטרדות.",
         },
         {
           icon: "ghost",
@@ -101,7 +101,7 @@ export const translations: Record<Lang, Dict> = {
         {
           icon: "pin",
           title: "אזורי רוח רפאים",
-          desc: "סמן מקומות כמו הבית או העבודה שבהם אתה תמיד בלתי נראה — באופן אוטומטי.",
+          desc: "סמן מקומות כמו הבית או העבודה שבהם אתה תמיד בלתי נראה - באופן אוטומטי.",
         },
         {
           icon: "chat",
@@ -118,32 +118,32 @@ export const translations: Record<Lang, Dict> = {
     steps: {
       eyebrow: "איך זה עובד",
       title: "שלושה צעדים פשוטים",
-      sub: "מהורדה לחיבור — תוך דקות.",
+      sub: "מהורדה לחיבור - תוך דקות.",
       items: [
         {
           title: 'פתח את המכ"ם שלך',
-          desc: 'הפעל את RINGA וראה מי נמצא פיזית בקרבתך על המכ"ם האישי שלך — בזמן אמת.',
+          desc: 'הפעל את RINGA וראה מי נמצא פיזית בקרבתך על המכ"ם האישי שלך - בזמן אמת.',
         },
         {
           title: "עיין בפרופילים",
-          desc: "גלה פרופילים של אנשים שנמצאים ממש סביבך עכשיו — לא קילומטרים רחוק.",
+          desc: "גלה פרופילים של אנשים שנמצאים ממש סביבך עכשיו - לא קילומטרים רחוק.",
         },
         {
           title: "שלח הודעה",
-          desc: "שבור את הקרח. ההודעה הראשונה מגיעה לאחר עיכוב קצר שאתה בוחר — ואז הכל בזמן אמת.",
+          desc: "שבור את הקרח. ההודעה הראשונה מגיעה לאחר עיכוב קצר שאתה בוחר - ואז הכל בזמן אמת.",
         },
       ],
     },
     privacy: {
       title1: "הפרטיות שלך,",
       title2: "הכללים שלך",
-      body: "המיקום המדויק שלך לא נחשף לאף אחד. רק המרחק המשוער ממך מוצג. מצב רוח רפאים ואזורי רוח רפאים נותנים לך שליטה מוחלטת — תמיד.",
+      body: "המיקום המדויק שלך לא נחשף לאף אחד. רק המרחק המשוער ממך מוצג. מצב רוח רפאים ואזורי רוח רפאים נותנים לך שליטה מוחלטת - תמיד.",
       link: "קרא את מדיניות הפרטיות ←",
     },
     cta: {
       title1: "מוכן לפגוש",
       title2: "מישהו בקרבתך?",
-      body: "הורד את RINGA וראה מי נמצא סביבך — עכשיו.",
+      body: "הורד את RINGA וראה מי נמצא סביבך - עכשיו.",
     },
     story: {
       scenes: {
@@ -151,19 +151,19 @@ export const translations: Record<Lang, Dict> = {
           n: "01",
           eyebrow: 'מכ"ם חי',
           title: "ראה מי באמת סביבך",
-          desc: 'RINGA סורק 75–200 מ׳ ומראה אנשים אמיתיים בקרבתך — ואז מתכווץ אל המסך הראשי כתזכורת חיה.',
+          desc: 'RINGA סורק עד 200 מ׳ ומראה אנשים אמיתיים בקרבתך - ואז מתכווץ אל המסך הראשי כתזכורת חיה.',
         },
         rooms: {
           n: "02",
-          eyebrow: "חדרים",
-          title: "המעגל הפרטי שלך",
-          desc: "צור חדר, שתף קוד, ורק מי שתזמין יופיע על המכ\"ם שלך.",
+          eyebrow: "אירועים",
+          title: "גלו מי עוד נכנס",
+          desc: "הצטרפו ל־EVENT דרך QR או קישור, גלו מי כאן ושלחו Like. יש Like הדדי? יש Match ואפשר לדבר. ללא GPS, גם אחרי שיצאתם. ברירת המחדל היא 24 שעות; שעת הסיום מופיעה באירוע.",
         },
         delay: {
           n: "03",
           eyebrow: "הודעה ראשונה מושהית",
           title: "ההודעה הראשונה מחכה",
-          desc: "אתה בוחר השהיה — עד 8 שעות. בלי לחץ, בלי ספאם, רק כוונה אמיתית.",
+          desc: "אתה בוחר השהיה - עד 8 שעות. בלי לחץ, בלי ספאם, רק כוונה אמיתית.",
         },
         chat: {
           n: "04",
@@ -181,9 +181,9 @@ export const translations: Record<Lang, Dict> = {
       labels: {
         scanning: "סורק…",
         nearby: "בקרבתך",
-        roomName: "חדר RINGA",
+        roomName: "אירוע RINGA",
         arrivesIn: "מגיעה בעוד",
-        firstMessage: "היי — אתה ממש בקרבת מקום 👀",
+        firstMessage: "היי - אתה ממש בקרבת מקום 👀",
         replyThem: "חחח כנראה. קפה?",
         replyMe: "בעניין. 10 דקות?",
         online: "מחובר",
@@ -203,14 +203,14 @@ export const translations: Record<Lang, Dict> = {
   },
 
   en: {
-    meta: { title: "RINGA — Meet People Nearby" },
+    meta: { title: "RINGA - Meet People Nearby" },
     nav: { features: "Features", how: "How it works", download: "Download" },
     hero: {
       badge: "Coming soon on iOS & Android",
       titleLine1: "Discover who's",
       titleLine2: "around you",
       accent: "right now.",
-      sub: "RINGA shows you real people within 200 meters of you — at your café, bar, or wherever you are. No swiping through strangers miles away.",
+      sub: "RINGA shows you real people within 200 meters of you - at your café, bar, or wherever you are. No swiping through strangers miles away.",
       scroll: "Scroll down",
     },
     badges: {
@@ -223,17 +223,17 @@ export const translations: Record<Lang, Dict> = {
     features: {
       eyebrow: "Features",
       title: "Everything you need, nothing you don't.",
-      sub: "Privacy, safety, and real connections — at the moment they happen.",
+      sub: "Privacy, safety, and real connections - at the moment they happen.",
       items: [
         {
           icon: "radar",
           title: "Live Proximity Radar",
-          desc: "See who's within 75–200 meters of you in real time. If they appear on your radar, they're actually there.",
+          desc: "See who's within 75-200 meters of you in real time. If they appear on your radar, they're actually there.",
         },
         {
           icon: "timer",
           title: "Message Delay",
-          desc: "Choose how long your first message waits — up to 8 hours. Reduces pressure and unwanted contact.",
+          desc: "Choose how long your first message waits - up to 8 hours. Reduces pressure and unwanted contact.",
         },
         {
           icon: "ghost",
@@ -243,7 +243,7 @@ export const translations: Record<Lang, Dict> = {
         {
           icon: "pin",
           title: "Ghost Zones",
-          desc: "Mark places like your home or workplace where you're always invisible — automatically.",
+          desc: "Mark places like your home or workplace where you're always invisible - automatically.",
         },
         {
           icon: "chat",
@@ -268,18 +268,18 @@ export const translations: Record<Lang, Dict> = {
         },
         {
           title: "Browse profiles",
-          desc: "Explore profiles of people who are actually around you right now — not miles away.",
+          desc: "Explore profiles of people who are actually around you right now - not miles away.",
         },
         {
           title: "Send a message",
-          desc: "Break the ice. Your first message arrives after a short delay you choose — then it's real-time from there.",
+          desc: "Break the ice. Your first message arrives after a short delay you choose - then it's real-time from there.",
         },
       ],
     },
     privacy: {
       title1: "Your privacy,",
       title2: "your rules",
-      body: "Your exact location is never shared with anyone. Only your approximate distance is visible. Ghost Mode and Ghost Zones give you full control — always.",
+      body: "Your exact location is never shared with anyone. Only your approximate distance is visible. Ghost Mode and Ghost Zones give you full control - always.",
       link: "Read our Privacy Policy →",
     },
     cta: {
@@ -293,19 +293,19 @@ export const translations: Record<Lang, Dict> = {
           n: "01",
           eyebrow: "Live radar",
           title: "See who's actually around you",
-          desc: "RINGA scans 75–200m and surfaces real people nearby — then shrinks into your home screen as a Live Activity.",
+          desc: "RINGA scans up to 200m and surfaces real people nearby - then shrinks into your home screen as a Live Activity.",
         },
         rooms: {
           n: "02",
-          eyebrow: "Rooms",
-          title: "Your own private circle",
-          desc: "Spin up a room, share a code, and only the people you invite show up on your radar.",
+          eyebrow: "Events",
+          title: "Meet people at your EVENT",
+          desc: "Join an EVENT by QR or link. Browse attendees and send Likes. Mutual Likes unlock a chat. Stay connected after leaving: no GPS required. Events default to 24 hours; check the event’s closing time.",
         },
         delay: {
           n: "03",
           eyebrow: "Delayed first message",
           title: "Your first message waits",
-          desc: "You pick the delay — up to 8 hours. No pressure, no spam, just real intention.",
+          desc: "You pick the delay - up to 8 hours. No pressure, no spam, just real intention.",
         },
         chat: {
           n: "04",
@@ -323,9 +323,9 @@ export const translations: Record<Lang, Dict> = {
       labels: {
         scanning: "Scanning…",
         nearby: "nearby",
-        roomName: "RINGA Room",
+        roomName: "RINGA Event",
         arrivesIn: "Arrives in",
-        firstMessage: "Hey — you're right nearby 👀",
+        firstMessage: "Hey - you're right nearby 👀",
         replyThem: "Ha, looks like it. Coffee?",
         replyMe: "I'm in. 10 min?",
         online: "online",

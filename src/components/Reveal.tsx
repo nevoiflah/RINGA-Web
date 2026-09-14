@@ -3,7 +3,7 @@ import type { ReactNode } from "react";
 
 type RevealProps = {
   children: ReactNode;
-  /** Stagger index — adds a small per-item delay for grid/list entrances. */
+  /** Stagger index - adds a small per-item delay for grid/list entrances. */
   index?: number;
   className?: string;
   /** Travel direction of the entrance. */
@@ -43,7 +43,7 @@ export default function Reveal({
     <MotionTag
       className={className}
       variants={variants}
-      initial="hidden"
+      initial={reduce ? "show" : "hidden"}
       whileInView="show"
       viewport={{ once: true, amount: 0.25, margin: "0px 0px -80px 0px" }}
     >

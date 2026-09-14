@@ -18,7 +18,7 @@ import InfinityLogo from "../InfinityLogo";
 
 /* ──────────────────────────────────────────────
    CSS recreations of the real RINGA app screens
-   (warm peach / coral light theme — see the real
+   (warm peach / coral light theme - see the real
    app's constants/theme.ts). Used inside the phone
    mockup in the scroll story.
    ────────────────────────────────────────────── */
@@ -28,8 +28,8 @@ type Tab = "radar" | "rooms" | "chat" | "gear";
 
 const FONT =
   "'Nunito', ui-rounded, 'SF Pro Rounded', system-ui, -apple-system, sans-serif";
-const CORAL = "#F27059";
-const GRAD = "linear-gradient(135deg, #F4845F 0%, #F27059 52%, #E8614D 100%)";
+const CORAL = "#FF6657";
+const GRAD = "linear-gradient(135deg, #FF7A52, #FF4F5E, #F52C72, #A72BA0)";
 
 /* Shared chrome ───────────────────────────────── */
 
@@ -182,24 +182,24 @@ export function Nearby({ he }: { he: boolean }) {
   );
 }
 
-export function Rooms({ he }: { he: boolean }) {
+export function Events({ he }: { he: boolean }) {
   const members = [
-    { src: "/app/p-tal.webp", he: "טל", en: "Tal", role: he ? "מנהל החדר" : "Room host", check: false },
+    { src: "/app/p-tal.webp", he: "טל", en: "Tal", role: he ? "מנהל האירוע" : "Event host", check: false },
     { src: "/app/p-omer.webp", he: "עומר", en: "Omer", role: he ? "הצטרף" : "Joined", check: true },
-    { src: "/app/p-alona.webp", he: "אלונה", en: "Alona", role: he ? "בחדר" : "In room", check: false },
-    { src: "/app/p-dor.webp", he: "דור", en: "Dor", role: he ? "בחדר" : "In room", check: false },
+    { src: "/app/p-alona.webp", he: "אלונה", en: "Alona", role: he ? "באירוע" : "In event", check: false },
+    { src: "/app/p-dor.webp", he: "דור", en: "Dor", role: he ? "באירוע" : "In event", check: false },
   ];
   return (
     <Frame dir={he ? "rtl" : "ltr"}>
-      <Header title={he ? "חדרים" : "Rooms"} />
+      <Header title={he ? "אירועים" : "Events"} />
       <div className="flex-1 space-y-3 px-4 pb-24">
         <div className="flex items-center justify-between rounded-[22px] bg-white p-3.5 shadow-[0_12px_30px_rgba(242,112,89,0.12)]">
           <div className="flex items-center gap-2.5">
-            <span className="flex h-10 w-10 items-center justify-center rounded-2xl bg-[#F1E9FB] text-[#9B7FA7]">
+            <span className="flex h-10 w-10 items-center justify-center rounded-2xl bg-[#F1E9FB] text-[#A72BA0]">
               <Link2 className="h-[18px] w-[18px]" />
             </span>
             <div>
-              <p className="text-[13px] font-extrabold leading-tight">{he ? "חדר RINGA" : "RINGA Room"}</p>
+              <p className="text-[13px] font-extrabold leading-tight">{he ? "אירוע RINGA" : "RINGA Event"}</p>
               <p className="font-mono text-[11px] tracking-[0.2em] text-[#9A8E92]">7K3Q</p>
             </div>
           </div>
@@ -229,7 +229,7 @@ export function Rooms({ he }: { he: boolean }) {
           ))}
         </div>
         <p className="px-3 text-center text-[11px] leading-relaxed text-[#A2969A]">
-          {he ? "רק מי שתזמין מצטרף — אישור בלחיצה." : "Only who you invite joins — approve with a tap."}
+          {he ? "רק מי שתזמין מצטרף - אישור בלחיצה." : "Only who you invite joins - approve with a tap."}
         </p>
       </div>
       <TabBar active="rooms" />
@@ -259,7 +259,7 @@ export function Chat({ he }: { he: boolean }) {
             className="max-w-[78%] rounded-[20px] rounded-ee-md px-3.5 py-2.5 text-[13px] font-semibold text-white shadow-[0_8px_18px_rgba(242,112,89,0.32)]"
             style={{ backgroundImage: GRAD }}
           >
-            {he ? "היי — אתה ממש בקרבת מקום 👀" : "Hey — you're right nearby 👀"}
+            {he ? "היי - אתה ממש בקרבת מקום 👀" : "Hey - you're right nearby 👀"}
           </div>
         </div>
 
@@ -305,7 +305,7 @@ export function Ghost({ he }: { he: boolean }) {
         {/* Ghost Mode */}
         <div className="rounded-[22px] bg-white p-4 shadow-[0_12px_30px_rgba(242,112,89,0.12)]">
           <div className="flex items-center gap-3">
-            <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-[#F1E9FB] text-[#9B7FA7]">
+            <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-[#F1E9FB] text-[#A72BA0]">
               <EyeOff className="h-5 w-5" />
             </span>
             <div className="flex-1">
@@ -322,7 +322,7 @@ export function Ghost({ he }: { he: boolean }) {
         <div className="rounded-[22px] bg-white p-4 shadow-[0_12px_30px_rgba(242,112,89,0.12)]">
           <div className="flex items-center justify-between">
             <p className="text-[14px] font-extrabold">{he ? "אזורי רוח רפאים" : "Ghost Zones"}</p>
-            <span className="rounded-full bg-[#FFE9E1] px-2.5 py-1 text-[11px] font-extrabold text-[#F27059]">
+            <span className="rounded-full bg-[#FFE9E1] px-2.5 py-1 text-[11px] font-extrabold text-[#FF6657]">
               {he ? "+ הוסף" : "+ Add"}
             </span>
           </div>
@@ -332,7 +332,7 @@ export function Ghost({ he }: { he: boolean }) {
               { l: "68%", t: "62%", label: he ? "עבודה" : "Work" },
             ].map((z) => (
               <div key={z.label} className="absolute -translate-x-1/2 -translate-y-1/2" style={{ left: z.l, top: z.t }}>
-                <span className="block h-10 w-10 rounded-full border-2 border-[#9B7FA7]/50 bg-[#9B7FA7]/15" />
+                <span className="block h-10 w-10 rounded-full border-2 border-[#A72BA0]/50 bg-[#A72BA0]/15" />
                 <span className="absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 items-center gap-1 whitespace-nowrap rounded-full bg-white px-1.5 py-0.5 text-[9px] font-extrabold text-[#7A5F87] shadow">
                   <MapPin className="h-2.5 w-2.5" />
                   {z.label}
@@ -344,7 +344,7 @@ export function Ghost({ he }: { he: boolean }) {
 
         {/* notifications row */}
         <div className="flex items-center gap-3 rounded-[22px] bg-white p-4 shadow-[0_12px_30px_rgba(242,112,89,0.12)]">
-          <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-[#FFE9E1] text-[#F27059]">
+          <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-[#FFE9E1] text-[#FF6657]">
             <Bell className="h-5 w-5" />
           </span>
           <div className="flex-1">

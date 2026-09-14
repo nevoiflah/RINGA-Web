@@ -7,13 +7,16 @@
    border-line, from-coral, to-purple, etc.
    ───────────────────────────────────────────── */
 @theme {
-  --color-bg: #1a0f1e;
-  --color-surface: #241327;
-  --color-coral: #ff6b6b;
-  --color-purple: #c084fc;
-  --color-ink: #f5f5fa;
-  --color-muted: #7a7a9a;
-  --color-line: rgba(255, 255, 255, 0.07);
+  --color-bg: #120B14;
+  --color-surface: #211322;
+  --color-coral: #FF6257;
+  --color-purple: #A72BA0;
+  --color-ink: #FFF9FA;
+  --color-muted: #B8A7B4;
+  --color-line: #56304D;
+  --color-pink: #F32C70;
+  --color-card: #29172A;
+  --color-active: #4A2047;
 
   --font-he: "Heebo", -apple-system, BlinkMacSystemFont, sans-serif;
   --font-en: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
@@ -27,6 +30,7 @@
 }
 
 html {
+  overflow-x: clip;
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
 }
@@ -36,7 +40,7 @@ body {
   background: var(--color-bg);
   color: var(--color-ink);
   line-height: 1.6;
-  overflow-x: hidden;
+  overflow-x: clip;
   font-family: var(--font-he);
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
@@ -67,7 +71,7 @@ html[lang="en"] body {
 
 /* ── Brand helpers ── */
 .text-gradient {
-  background-image: linear-gradient(135deg, var(--color-coral) 0%, var(--color-purple) 100%);
+  background-image: linear-gradient(135deg, #FF7A52 0%, #FF4F5E 33%, #F52C72 66%, #A72BA0 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -123,7 +127,7 @@ html[lang="en"] body {
     transform: translate(20px, -30px) scale(1.05);
   }
 }
-/* Continuous radar sweep — kept independent of scroll so it always feels alive. */
+/* Continuous radar sweep - kept independent of scroll so it always feels alive. */
 @keyframes radar-spin {
   to {
     transform: rotate(360deg);
@@ -156,4 +160,15 @@ html[lang="en"] body {
   50% {
     transform: translate(-50%, -50%) scale(1.045);
   }
+}
+
+.brand-cta { background: linear-gradient(110deg, #FF7A52, #FF4F5E, #F52C72, #A72BA0); }
+
+/* One responsive stage keeps every morph in the same coordinate system. */
+.story-visual { width: min(320px, 82vw, 42svh); height: min(320px, 82vw, 42svh); }
+@media (max-height: 720px) {
+  .story-visual { top: 35%; }
+  .story-caption { bottom: 3%; }
+  .story-caption > p { font-size: 12px; }
+  .story-caption h2 { font-size: 1.35rem; }
 }

@@ -18,7 +18,7 @@ function Badge({ sub, name, icon, label, href }: BadgeProps) {
         {icon}
       </span>
       <span className="flex flex-col text-start leading-tight">
-        <span className="text-[0.68rem] font-medium text-muted">{sub}</span>
+        <span className="text-[0.68rem] font-medium text-white/90">{sub}</span>
         <span className="text-[0.95rem] font-extrabold">{name}</span>
       </span>
     </>
@@ -26,7 +26,7 @@ function Badge({ sub, name, icon, label, href }: BadgeProps) {
   const className = `inline-flex select-none items-center gap-3 rounded-2xl px-5 py-3.5 text-ink ${
     href ? "transition-transform hover:-translate-y-0.5" : "cursor-default"
   }`;
-  const style = { background: "rgba(255,255,255,0.05)", backdropFilter: "blur(8px)" };
+  const style = { background: href ? "linear-gradient(110deg, #FF7A52, #FF4F5E, #F52C72, #A72BA0)" : "#29172A", backdropFilter: "blur(8px)" };
 
   if (href) {
     return (
@@ -75,7 +75,7 @@ export default function StoreBadges({ className = "" }: { className?: string }) 
           sub={t.badges.playSub}
           name={t.badges.playName}
           icon={<GooglePlayIcon className="h-6 w-6" />}
-          label={`${t.badges.playName} — ${t.badges.comingSoon}`}
+          label={`${t.badges.playName} - ${t.badges.comingSoon}`}
         />
       </div>
     </div>

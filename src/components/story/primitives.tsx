@@ -66,6 +66,7 @@ export function SceneCaption({
   n,
   eyebrow,
   title,
+  description,
   dir,
 }: {
   p: MotionValue<number>;
@@ -74,6 +75,7 @@ export function SceneCaption({
   n: string;
   eyebrow: string;
   title: string;
+  description?: string;
   dir: "rtl" | "ltr";
 }) {
   const [a, b, c, d] = range;
@@ -86,7 +88,7 @@ export function SceneCaption({
       style={{
         opacity,
         y,
-        // soft local darkening behind the text — no hard band/edge
+        // soft local darkening behind the text - no hard band/edge
         background:
           "radial-gradient(70% 150% at 50% 60%, rgba(4,3,10,0.55) 0%, rgba(4,3,10,0.22) 45%, transparent 78%)",
       }}
@@ -101,6 +103,7 @@ export function SceneCaption({
       >
         {title}
       </h3>
+      {description && <p className="mx-auto mt-3 max-w-lg text-sm leading-relaxed text-ink/80">{description}</p>}
     </motion.div>
   );
 }

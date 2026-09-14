@@ -15,7 +15,7 @@ export default function CTA() {
         <InfinityLogo
           variant="gradient"
           draw
-          className="relative mx-auto h-9 w-[72px]"
+          className="relative mx-auto h-20 w-20"
         />
         <h2 className="relative mt-7 text-[clamp(2rem,5vw,3.6rem)] font-black leading-[1.1] tracking-tight">
           {t.cta.title1}

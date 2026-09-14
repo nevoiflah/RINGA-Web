@@ -26,7 +26,7 @@ const CONTENT: Record<Lang, { title: string; subtitle: string; body: ReactNode }
         <H2>1. מבוא</H2>
         <P>
           ברוכים הבאים ל־RINGA. RINGA היא פלטפורמה חברתית וקהילתית מבוססת מיקום, שנועדה לסייע
-          לאנשים לגלות ולהתחבר לאנשים אחרים, לקהילות, ל־Rooms ולפעילויות הנמצאים סביבם בעולם
+          לאנשים לגלות ולהתחבר לאנשים אחרים, לקהילות, ל־Events ולפעילויות הנמצאים סביבם בעולם
           האמיתי.
         </P>
         <P>
@@ -106,11 +106,11 @@ const CONTENT: Record<Lang, { title: string; subtitle: string; body: ReactNode }
         <P>
           מידע על מיקום הוא רכיב מרכזי ב־RINGA. בכפוף להרשאה שתעניקו במכשיר, RINGA עשויה לאסוף
           ולעבד את המיקום הגיאוגרפי של המכשיר, לרבות מידע הדרוש כדי לקבוע אם משתמשי RINGA אחרים
-          או Rooms נמצאים בקרבתכם.
+          או Events נמצאים בקרבתכם.
         </P>
         <P>
-          מידע על מיקום עשוי להיאסף בזמן השימוש באפליקציה, וכן — כאשר הענקתם את הרשאת המכשיר
-          המתאימה — כאשר RINGA פועלת ברקע. שימוש במיקום ברקע עשוי להיעשות לצורך פונקציות
+          מידע על מיקום עשוי להיאסף בזמן השימוש באפליקציה, וכן - כאשר הענקתם את הרשאת המכשיר
+          המתאימה - כאשר RINGA פועלת ברקע. שימוש במיקום ברקע עשוי להיעשות לצורך פונקציות
           תלויות־מיקום, לרבות Live Activities, פונקציות Nearby רלוונטיות והתראות.
         </P>
 
@@ -138,20 +138,20 @@ const CONTENT: Record<Lang, { title: string; subtitle: string; body: ReactNode }
           השירות, לאספקת פונקציונליות שביקשתם, לשמירה על אבטחה או לעמידה בדרישות הדין.
         </P>
 
-        <H3>4.7 Rooms</H3>
+        <H3>4.7 Events</H3>
         <P>
-          RINGA כוללת פיצ'ר בשם Rooms, המאפשר למשתמשים להשתתף בקהילות ובחוויות הקשורות למיקום או
-          לאירוע. Rooms עשויים להיות פרטיים או להיות מוגדרים באופן אחר על ידי מנהל ה־Room.
+          RINGA כוללת פיצ'ר בשם Events, המאפשר למשתמשים להשתתף בקהילות ובחוויות הקשורות למיקום או
+          לאירוע. Events עשויים להיות פרטיים או להיות מוגדרים באופן אחר על ידי מנהל ה־Event.
         </P>
         <P>
-          בהתאם להגדרת ה־Room, ניתן יהיה להצטרף באמצעות קוד QR, קישור ייעודי או דרך אחרת שתעמיד
-          RINGA. Rooms עשויים לכלול מידע כגון שם ה־Room, משתמשים משתתפים, מידע על האירוע או
-          ה־Room, משך הפעילות, אינטראקציות, Likes, Matches והודעות או שיחות שנוצרו במסגרת
-          האינטראקציות ב־Room.
+          בהתאם להגדרת ה־Event, ניתן יהיה להצטרף באמצעות קוד QR, קישור ייעודי או דרך אחרת שתעמיד
+          RINGA. Events עשויים לכלול מידע כגון שם ה־Event, משתמשים משתתפים, מידע על האירוע או
+          ה־Event, משך הפעילות, אינטראקציות, Likes, Matches והודעות או שיחות שנוצרו במסגרת
+          האינטראקציות ב־Event.
         </P>
         <P>
-          רק מנהלים מורשים או אנשים שקיבלו הרשאה מפורשת מ־RINGA רשאים ליצור Rooms. הזמינות ומשך
-          הפעילות של כל Room עשויים להשתנות בהתאם להגדרותיו.
+          רק מנהלים מורשים או אנשים שקיבלו הרשאה מפורשת מ־RINGA רשאים ליצור Events. הזמינות ומשך
+          הפעילות של כל Event עשויים להשתנות בהתאם להגדרותיו.
         </P>
 
         <H3>4.8 הודעות וצ'אטים</H3>
@@ -197,7 +197,7 @@ const CONTENT: Record<Lang, { title: string; subtitle: string; body: ReactNode }
 
         <H3>4.11 התראות</H3>
         <P>
-          RINGA עשויה לשלוח התראות הקשורות לפעילות Nearby, Rooms, הודעות, Likes, Matches או
+          RINGA עשויה לשלוח התראות הקשורות לפעילות Nearby, Events, הודעות, Likes, Matches או
           אינטראקציות רלוונטיות, Live Activities, ענייני חשבון או אבטחה, עדכוני שירות ופונקציות
           נוספות של RINGA.
         </P>
@@ -221,14 +221,14 @@ const CONTENT: Record<Lang, { title: string; subtitle: string; body: ReactNode }
 
         <H2>5. הרשאות שבהן RINGA משתמשת</H2>
         <P>
-          בהתאם למכשיר ולפיצ'רים שבהם תבחרו להשתמש, RINGA עשויה לבקש הרשאות למיקום — כולל מיקום
-          ברקע כאשר אושר — למצלמה, לספריית התמונות ולהתראות.
+          בהתאם למכשיר ולפיצ'רים שבהם תבחרו להשתמש, RINGA עשויה לבקש הרשאות למיקום - כולל מיקום
+          ברקע כאשר אושר - למצלמה, לספריית התמונות ולהתראות.
         </P>
         <P>
           המיקום משמש ל־Nearby, לפונקציות מבוססות מיקום, ל־Live Activities ולפונקציות קשורות.
           גישה למצלמה עשויה לשמש לצילום תמונות פרופיל ולסריקת QR כאשר הדבר רלוונטי. גישה לספריית
           התמונות מאפשרת לבחור תמונות פרופיל. הרשאת התראות מאפשרת ל־RINGA לשלוח הודעות, התראות
-          Rooms, התראות Nearby, Matches, Live Activities והתראות שירות רלוונטיות נוספות.
+          Events, התראות Nearby, Matches, Live Activities והתראות שירות רלוונטיות נוספות.
         </P>
         <P>
           RINGA אינה דורשת כיום גישה לאנשי הקשר, למיקרופון, ל־Bluetooth, ל־NFC או ליומן לצורך
@@ -238,7 +238,7 @@ const CONTENT: Record<Lang, { title: string; subtitle: string; body: ReactNode }
         <H2>6. כיצד אנו משתמשים במידע</H2>
         <P>
           אנו עשויים להשתמש במידע אישי כדי ליצור ולתחזק את החשבון; לספק ולהפעיל את RINGA; להפעיל
-          Nearby ו־Rooms; להציג פרופילים רלוונטיים; לאפשר אינטראקציות, Matches ותקשורת בין
+          Nearby ו־Events; להציג פרופילים רלוונטיים; לאפשר אינטראקציות, Matches ותקשורת בין
           משתמשים; לספק פונקציות מבוססות מיקום ו־Live Activities; לשלוח הודעות אימות והתראות
           שירות; לתחזק, לפתור תקלות ולאבטח את השירות; לבדוק דיווחים; לאכוף את כללי RINGA; למנוע
           הטרדה, שימוש לרעה, ספאם, הונאה, חשבונות מזויפים ופעילות בלתי מורשית; ולעמוד בחובות
@@ -248,10 +248,10 @@ const CONTENT: Record<Lang, { title: string; subtitle: string; body: ReactNode }
         <H2>7. בסיסים משפטיים לעיבוד מידע</H2>
         <P>
           כאשר דיני פרטיות החלים עלינו, לרבות GDPR, מחייבים אותנו לזהות בסיס משפטי לעיבוד מידע
-          אישי, אנו עשויים להסתמך על אחד או יותר מהבסיסים הבאים: ביצוע חוזה — כאשר העיבוד נדרש כדי
-          לספק את RINGA ואת הפונקציונליות שביקשתם; הסכמה — לרבות לגבי הרשאות מכשיר מסוימות כגון
-          גישה למיקום; אינטרסים לגיטימיים — כגון הגנה על משתמשים, מניעת הונאה ושימוש לרעה, אבטחת
-          השירות ואכיפת הכללים; וחובה משפטית — כאשר העיבוד או השמירה נדרשים לפי דין או בקשה חוקית.
+          אישי, אנו עשויים להסתמך על אחד או יותר מהבסיסים הבאים: ביצוע חוזה - כאשר העיבוד נדרש כדי
+          לספק את RINGA ואת הפונקציונליות שביקשתם; הסכמה - לרבות לגבי הרשאות מכשיר מסוימות כגון
+          גישה למיקום; אינטרסים לגיטימיים - כגון הגנה על משתמשים, מניעת הונאה ושימוש לרעה, אבטחת
+          השירות ואכיפת הכללים; וחובה משפטית - כאשר העיבוד או השמירה נדרשים לפי דין או בקשה חוקית.
         </P>
 
         <H2>8. כיצד אנו משתפים מידע</H2>
@@ -264,7 +264,7 @@ const CONTENT: Record<Lang, { title: string; subtitle: string; body: ReactNode }
         <H3>8.1 משתמשי RINGA אחרים</H3>
         <P>
           בהתאם לפרופיל, להגדרות ולאופן השימוש שלכם בשירות, משתמשים אחרים עשויים לראות את הפרופיל
-          שלכם, תמונות הפרופיל, שם המשתמש או השם, הגיל, הביוגרפיה, תחומי העניין, השתתפות ב־Rooms,
+          שלכם, תמונות הפרופיל, שם המשתמש או השם, הגיל, הביוגרפיה, תחומי העניין, השתתפות ב־Events,
           Likes או Matches כאשר רלוונטי, הודעות שתשלחו להם ומידע נוסף שתבחרו להציג באמצעות RINGA.
           אף ש־Nearby עשוי להצביע על כך שמשתמשים נמצאים באותו אזור כללי, RINGA אינה מציגה מרחק
           מדויק בין משתמשים.
@@ -274,27 +274,27 @@ const CONTENT: Record<Lang, { title: string; subtitle: string; body: ReactNode }
         <P>RINGA משתמשת כיום בספקי השירות הבאים לצורך הפעלת השירות:</P>
         <UL>
           <li>
-            <Strong>Replit</Strong> — אירוח שרתים, תשתית מסד נתונים, תשתית קבצים ופעילות Backend
+            <Strong>Replit</Strong> - אירוח שרתים, תשתית מסד נתונים, תשתית קבצים ופעילות Backend
             קשורה.
           </li>
           <li>
-            <Strong>Google Cloud Storage</Strong> — אחסון תמונות פרופיל.
+            <Strong>Google Cloud Storage</Strong> - אחסון תמונות פרופיל.
           </li>
           <li>
-            <Strong>Resend</Strong> — שליחת הודעות דוא"ל לאימות חשבון.
+            <Strong>Resend</Strong> - שליחת הודעות דוא"ל לאימות חשבון.
           </li>
           <li>
-            <Strong>Apple Push Notification service (APNs)</Strong> — התראות במכשירי Apple
+            <Strong>Apple Push Notification service (APNs)</Strong> - התראות במכשירי Apple
             נתמכים.
           </li>
           <li>
-            <Strong>Expo Push Service</Strong> — תשתית Push Notifications.
+            <Strong>Expo Push Service</Strong> - תשתית Push Notifications.
           </li>
           <li>
-            <Strong>Firebase Cloud Messaging (FCM)</Strong> — התראות במכשירי Android.
+            <Strong>Firebase Cloud Messaging (FCM)</Strong> - התראות במכשירי Android.
           </li>
           <li>
-            <Strong>Google Maps</Strong> — פונקציונליות מפה במכשירי Android.
+            <Strong>Google Maps</Strong> - פונקציונליות מפה במכשירי Android.
           </li>
         </UL>
         <P>
@@ -444,18 +444,18 @@ const CONTENT: Record<Lang, { title: string; subtitle: string; body: ReactNode }
         </P>
         <P>
           RINGA אינה מתחייבת לזהותו של כל משתמש; לדיוק המידע שמסרו משתמשים; לכוונותיהם או
-          להתנהגותם; לבטיחות של אינטראקציה מסוימת; לזמינותו של משתמש אחר; לכך ש־Room או אירוע
+          להתנהגותם; לבטיחות של אינטראקציה מסוימת; לזמינותו של משתמש אחר; לכך ש־Event או אירוע
           יתקיימו כפי שתוארו; או לכך שאדם המוצג ב־Nearby יישאר באותו מקום.
         </P>
         <P>
           מידע והמלצות בטיחות עשויים להינתן בנפרד באמצעות מרכז הבטיחות או כללי הקהילה של RINGA.
         </P>
 
-        <H2>20. Rooms ואירועים של צדדים שלישיים</H2>
+        <H2>20. Events ואירועים של צדדים שלישיים</H2>
         <P>
-          חלק מה־Rooms עשויים להיות קשורים לאירועים, מקומות, קהילות או פעילויות המופעלים על ידי
+          חלק מה־Events עשויים להיות קשורים לאירועים, מקומות, קהילות או פעילויות המופעלים על ידי
           צדדים שלישיים. אלא אם צוין במפורש אחרת, RINGA אינה מארגנת, מפעילה או שולטת במקום או
-          באירוע של צד שלישי רק משום ש־Room הקשור אליו זמין דרך RINGA.
+          באירוע של צד שלישי רק משום ש־Event הקשור אליו זמין דרך RINGA.
         </P>
         <P>
           המקום, המארגן או המנהל הרלוונטי עשויים להיות אחראים לאירוע שלהם, למתחם הפיזי, למדיניות
@@ -515,7 +515,7 @@ const CONTENT: Record<Lang, { title: string; subtitle: string; body: ReactNode }
         <H2>1. Introduction</H2>
         <P>
           Welcome to RINGA. RINGA is a location-based social and community platform designed to
-          help people discover and connect with other people, communities, Rooms, and activities
+          help people discover and connect with other people, communities, Events, and activities
           around them in the real world.
         </P>
         <P>
@@ -604,7 +604,7 @@ const CONTENT: Record<Lang, { title: string; subtitle: string; body: ReactNode }
         <P>
           Location information is a core component of RINGA. With your device permission, RINGA
           may collect and process your device's geolocation, including location information
-          necessary to determine whether other RINGA users or Rooms are located near you.
+          necessary to determine whether other RINGA users or Events are located near you.
         </P>
         <P>
           Location information may be collected while you are using the application and, where you
@@ -641,22 +641,22 @@ const CONTENT: Record<Lang, { title: string; subtitle: string; body: ReactNode }
           functionality, maintain security, or comply with applicable law.
         </P>
 
-        <H3>4.7 Rooms</H3>
+        <H3>4.7 Events</H3>
         <P>
-          RINGA includes a feature called "Rooms," which allows users to participate in location-
-          or event-related communities and experiences. Rooms may be private or may be configured
-          otherwise by the Room administrator.
+          RINGA includes a feature called "Events," which allows users to participate in location-
+          or event-related communities and experiences. Events may be private or may be configured
+          otherwise by the Event administrator.
         </P>
         <P>
-          Depending on the Room configuration, users may be able to join a Room through a QR code,
-          a dedicated link, or another method made available by RINGA. Rooms may contain
-          information including the Room name, participating users, event or Room information, Room
+          Depending on the Event configuration, users may be able to join a Event through a QR code,
+          a dedicated link, or another method made available by RINGA. Events may contain
+          information including the Event name, participating users, event or Event information, Event
           duration, user interactions, Likes, Matches, and messages or chats generated through
-          Room interactions.
+          Event interactions.
         </P>
         <P>
           Only authorized administrators or individuals specifically authorized by RINGA may
-          create Rooms. The availability and duration of each Room may vary according to its
+          create Events. The availability and duration of each Event may vary according to its
           configuration.
         </P>
 
@@ -707,7 +707,7 @@ const CONTENT: Record<Lang, { title: string; subtitle: string; body: ReactNode }
 
         <H3>4.11 Notifications</H3>
         <P>
-          RINGA may send notifications relating to Nearby activity, Rooms, messages, Matches,
+          RINGA may send notifications relating to Nearby activity, Events, messages, Matches,
           Likes or relevant interactions, Live Activities, account or security matters, Service
           updates, and other RINGA functionality.
         </P>
@@ -741,7 +741,7 @@ const CONTENT: Record<Lang, { title: string; subtitle: string; body: ReactNode }
           Location is used for Nearby, location-based functionality, Live Activities, and related
           functionality. Camera access may be used for profile photographs and applicable QR
           scanning functionality. Photo-library access allows you to select profile photographs.
-          Notification permission allows RINGA to deliver messages, Room notifications, Nearby
+          Notification permission allows RINGA to deliver messages, Event notifications, Nearby
           notifications, Matches, Live Activities, and other relevant Service notifications.
         </P>
         <P>
@@ -752,7 +752,7 @@ const CONTENT: Record<Lang, { title: string; subtitle: string; body: ReactNode }
         <H2>6. How We Use Your Information</H2>
         <P>
           We may use personal information to create and maintain your account; provide and operate
-          RINGA; operate Nearby and Rooms; display relevant profiles; facilitate user
+          RINGA; operate Nearby and Events; display relevant profiles; facilitate user
           interactions, Matches, and communications; provide location-based functionality and Live
           Activities; send verification emails and Service notifications; maintain, troubleshoot,
           and secure the Service; investigate reports; enforce RINGA's rules; prevent harassment,
@@ -783,7 +783,7 @@ const CONTENT: Record<Lang, { title: string; subtitle: string; body: ReactNode }
         <H3>8.1 Other RINGA Users</H3>
         <P>
           Depending on your profile, settings, and use of the Service, other users may see your
-          profile, profile photographs, username or name, age, biography, interests, Room
+          profile, profile photographs, username or name, age, biography, interests, Event
           participation, Likes or Matches where applicable, messages you send them, and other
           information you intentionally make available through RINGA. Although Nearby may indicate
           that users are in the same general area, RINGA does not display exact distance between
@@ -794,27 +794,27 @@ const CONTENT: Record<Lang, { title: string; subtitle: string; body: ReactNode }
         <P>RINGA currently uses the following service providers to operate the Service:</P>
         <UL>
           <li>
-            <Strong>Replit</Strong> — server hosting, database infrastructure, file
+            <Strong>Replit</Strong> - server hosting, database infrastructure, file
             infrastructure, and related backend operations.
           </li>
           <li>
-            <Strong>Google Cloud Storage</Strong> — storage of profile photographs.
+            <Strong>Google Cloud Storage</Strong> - storage of profile photographs.
           </li>
           <li>
-            <Strong>Resend</Strong> — account-verification emails.
+            <Strong>Resend</Strong> - account-verification emails.
           </li>
           <li>
-            <Strong>Apple Push Notification service (APNs)</Strong> — notifications on supported
+            <Strong>Apple Push Notification service (APNs)</Strong> - notifications on supported
             Apple devices.
           </li>
           <li>
-            <Strong>Expo Push Service</Strong> — push-notification infrastructure.
+            <Strong>Expo Push Service</Strong> - push-notification infrastructure.
           </li>
           <li>
-            <Strong>Firebase Cloud Messaging (FCM)</Strong> — notifications on Android devices.
+            <Strong>Firebase Cloud Messaging (FCM)</Strong> - notifications on Android devices.
           </li>
           <li>
-            <Strong>Google Maps</Strong> — map functionality on Android devices.
+            <Strong>Google Maps</Strong> - map functionality on Android devices.
           </li>
         </UL>
         <P>
@@ -984,7 +984,7 @@ const CONTENT: Record<Lang, { title: string; subtitle: string; body: ReactNode }
         <P>
           RINGA does not guarantee the identity of every user; the accuracy of information provided
           by users; the intentions or behavior of users; the safety of a particular interaction;
-          the availability of another user; that a Room or event will occur as described; or that
+          the availability of another user; that a Event or event will occur as described; or that
           another person shown through Nearby remains at the same location.
         </P>
         <P>
@@ -992,11 +992,11 @@ const CONTENT: Record<Lang, { title: string; subtitle: string; body: ReactNode }
           Center or Community Guidelines.
         </P>
 
-        <H2>20. Rooms and Third-Party Events</H2>
+        <H2>20. Events and Third-Party Events</H2>
         <P>
-          Some Rooms may relate to events, venues, communities, or activities operated by third
+          Some Events may relate to events, venues, communities, or activities operated by third
           parties. Unless expressly stated otherwise, RINGA does not organize, operate, or control
-          third-party venues or events merely because a Room is available through RINGA.
+          third-party venues or events merely because a Event is available through RINGA.
         </P>
         <P>
           The relevant venue, organizer, or administrator may be responsible for its own event,

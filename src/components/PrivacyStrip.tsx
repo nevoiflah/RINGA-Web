@@ -6,14 +6,14 @@ import Reveal from "./Reveal";
 export default function PrivacyStrip() {
   const { t } = useLang();
   return (
-    <section className="mx-auto max-w-3xl px-6 py-20 sm:py-28">
+    <section className="mx-auto max-w-3xl px-6 py-14 sm:py-20">
       <Reveal>
         <div className="relative px-6 py-6 text-center">
           <div
             aria-hidden
             className="pointer-events-none absolute -top-20 left-1/2 h-48 w-[120%] -translate-x-1/2 bg-gradient-to-br from-coral/20 to-purple/20 opacity-40 blur-[90px]"
           />
-          <span className="relative mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-coral to-purple text-white shadow-[0_10px_30px_rgba(255,107,107,0.35)]">
+          <span className="relative mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-coral/15 text-coral ring-1 ring-coral/25">
             <ShieldCheck className="h-7 w-7" />
           </span>
           <h2 className="relative mt-6 text-[clamp(1.6rem,3.4vw,2.2rem)] font-black tracking-tight">

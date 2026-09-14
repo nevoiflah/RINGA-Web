@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 
 /**
- * Premium iPhone 16 Pro–style mockup frame. Presentational only: it clips
+ * Premium iPhone 16 Pro-style mockup frame. Presentational only: it clips
  * `children` inside the screen. Titanium body, real Dynamic Island, thin
  * uniform bezels, screen glare and a deep floating shadow.
  */
@@ -14,7 +14,7 @@ export default function PhoneFrame({
 }) {
   return (
     <div className={`relative ${className}`}>
-      {/* side buttons — titanium */}
+      {/* side buttons - titanium */}
       <span className="absolute -left-[2.5px] top-[16%] h-7 w-[2.5px] rounded-l-md bg-gradient-to-b from-[#4a4a52] to-[#1b1b20]" />
       <span className="absolute -left-[3px] top-[27%] h-12 w-[3px] rounded-l-md bg-gradient-to-b from-[#52525a] to-[#202026]" />
       <span className="absolute -left-[3px] top-[40%] h-12 w-[3px] rounded-l-md bg-gradient-to-b from-[#52525a] to-[#202026]" />

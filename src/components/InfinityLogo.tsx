@@ -1,53 +1,27 @@
-import { motion, useReducedMotion } from "framer-motion";
+import { useId } from "react";
 
-type Props = {
-  className?: string;
-  /** Solid coral (matches the app) or the coral→purple brand gradient. */
-  variant?: "coral" | "gradient";
-  /** Draw the stroke on when it enters view. */
-  draw?: boolean;
-};
+type Props = { className?: string; variant?: "coral" | "gradient"; draw?: boolean; rings?: boolean };
 
-/** Recreation of RINGA's hand-drawn infinity (∞) mark as a crisp inline SVG. */
-export default function InfinityLogo({
-  className,
-  variant = "gradient",
-  draw = false,
-}: Props) {
-  const reduce = useReducedMotion();
-  const id = variant === "gradient" ? "ringa-inf-grad" : undefined;
-  const stroke = id ? `url(#${id})` : "var(--color-coral)";
-
-  const path =
-    "M28,25 C28,12 46,12 50,25 C54,38 72,38 72,25 C72,12 54,12 50,25 C46,38 28,38 28,25 Z";
-
+/** Transparent vector version of the app's open infinity and radar mark. */
+export default function InfinityLogo({ className, variant = "gradient", rings = true }: Props) {
+  const id = useId().replace(/:/g, "");
   return (
-    <svg
-      viewBox="0 0 100 50"
-      className={className}
-      role="img"
-      aria-label="RINGA"
-      fill="none"
-    >
-      {id && (
-        <defs>
-          <linearGradient id={id} x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stopColor="var(--color-coral)" />
-            <stop offset="100%" stopColor="var(--color-purple)" />
-          </linearGradient>
-        </defs>
-      )}
-      <motion.path
-        d={path}
-        stroke={stroke}
-        strokeWidth={8}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        initial={draw && !reduce ? { pathLength: 0, opacity: 0 } : undefined}
-        whileInView={draw && !reduce ? { pathLength: 1, opacity: 1 } : undefined}
-        viewport={draw ? { once: true } : undefined}
-        transition={draw ? { duration: 1.1, ease: [0.22, 1, 0.36, 1] } : undefined}
-      />
+    <svg viewBox="0 0 200 150" fill="none" className={className} role="img" aria-label="RINGA">
+      <defs>
+        <linearGradient id={id} x1="15" y1="35" x2="185" y2="130" gradientUnits="userSpaceOnUse">
+          <stop stopColor="#FF7A52" /><stop offset=".33" stopColor="#FF4F5E" />
+          <stop offset=".67" stopColor="#F52C72" /><stop offset="1" stopColor="#A72BA0" />
+        </linearGradient>
+      </defs>
+      <g stroke={variant === "coral" ? "#FF6257" : `url(#${id})`}>
+        <path d="M90 67 C75 82 65 88 52 88 C17 88 17 33 52 33 C84 33 116 88 148 88 C183 88 183 33 148 33 C135 33 125 39 110 54" strokeWidth="11" strokeLinecap="round" />
+        {rings && <g strokeWidth="1.7">
+          <ellipse cx="100" cy="107" rx="19" ry="7" />
+          <ellipse cx="100" cy="111" rx="42" ry="15" opacity=".8" />
+          <ellipse cx="100" cy="115" rx="65" ry="23" opacity=".6" />
+          <ellipse cx="100" cy="119" rx="88" ry="30" opacity=".4" />
+        </g>}
+      </g>
     </svg>
   );
 }

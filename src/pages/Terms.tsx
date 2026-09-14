@@ -20,7 +20,7 @@ const CONTENT: Record<Lang, { title: string; subtitle: string; body: ReactNode }
     body: (
       <>
         <P>
-          תנאים אלה מסדירים את הגישה והשימוש ב־RINGA, לרבות Nearby, Rooms, הודעות, פיצ'רים מבוססי
+          תנאים אלה מסדירים את הגישה והשימוש ב־RINGA, לרבות Nearby, Events, הודעות, פיצ'רים מבוססי
           מיקום והשירותים הקשורים אליהם.
         </P>
 
@@ -70,17 +70,17 @@ const CONTENT: Record<Lang, { title: string; subtitle: string; body: ReactNode }
         <H2>4. שירות RINGA</H2>
         <P>
           RINGA היא פלטפורמה חברתית וקהילתית מבוססת מיקום, שנועדה לסייע לאנשים לגלות אנשים, קהילות,
-          Rooms, אירועים והזדמנויות לאינטראקציה בעולם האמיתי הנמצאים בקרבתם.
+          Events, אירועים והזדמנויות לאינטראקציה בעולם האמיתי הנמצאים בקרבתם.
         </P>
         <P>
-          השירות עשוי לכלול Nearby, Rooms, גילוי פרופילים, Likes, Matches, הודעות, פונקציות
+          השירות עשוי לכלול Nearby, Events, גילוי פרופילים, Likes, Matches, הודעות, פונקציות
           מבוססות מיקום, Live Activities, התראות, בקרות פרטיות ופיצ'רים נוספים ש־RINGA עשויה
           להוסיף, לשנות או להסיר לאורך זמן.
         </P>
         <P>
           RINGA מספקת טכנולוגיה שמאפשרת גילוי ותקשורת. אלא אם RINGA מציינת במפורש אחרת, RINGA אינה
           המארגנת, הבעלים או המפעילה של מקום או אירוע המופעלים על ידי צד שלישי, ואינה מתחייבת
-          שחיבור, Match, שיחה, מפגש, Room או אירוע כלשהם יתקיימו או יניבו תוצאה מסוימת.
+          שחיבור, Match, שיחה, מפגש, Event או אירוע כלשהם יתקיימו או יניבו תוצאה מסוימת.
         </P>
 
         <H2>5. Nearby ופיצ'רים מבוססי מיקום</H2>
@@ -114,34 +114,34 @@ const CONTENT: Record<Lang, { title: string; subtitle: string; body: ReactNode }
           נקבעת בהתאם לאופן שבו הפיצ'ר מוצג בשירות באותו מועד.
         </P>
 
-        <H2>7. Rooms</H2>
+        <H2>7. Events</H2>
         <P>
-          Rooms הם מרחבים בתוך RINGA שעשויים להיות קשורים לאירוע, מקום, קהילה, פעילות או חוויה
-          מוגדרת אחרת. Room עשוי להיות פרטי או להיות מוגדר באופן אחר על ידי מנהל ה־Room.
+          Events הם מרחבים בתוך RINGA שעשויים להיות קשורים לאירוע, מקום, קהילה, פעילות או חוויה
+          מוגדרת אחרת. Event עשוי להיות פרטי או להיות מוגדר באופן אחר על ידי מנהל ה־Event.
         </P>
         <P>
-          משתמשים עשויים להצטרף ל־Room באמצעות קוד QR, קישור הזמנה או דרך אחרת ש־RINGA מעמידה
+          משתמשים עשויים להצטרף ל־Event באמצעות קוד QR, קישור הזמנה או דרך אחרת ש־RINGA מעמידה
           לרשותם. גישה לקוד QR או לקישור אינה מקנה זכות כניסה למקום פיזי או לאירוע, ו־RINGA אינה
-          מתחייבת ש־Room, מקום או אירוע יישארו זמינים.
+          מתחייבת ש־Event, מקום או אירוע יישארו זמינים.
         </P>
         <P>
-          משך הפעילות והזמינות של Room נקבעים בהתאם להגדרותיו. ההשתתפות ב־Room עשויה להימשך למשך
+          משך הפעילות והזמינות של Event נקבעים בהתאם להגדרותיו. ההשתתפות ב־Event עשויה להימשך למשך
           התקופה שהוגדרה גם אם המשתתף עזב את המיקום הפיזי, בכפוף לפונקציונליות השירות ולהגדרות
           הרלוונטיות.
         </P>
 
-        <H2>8. מנהלי Rooms ויוצרים מורשים</H2>
+        <H2>8. מנהלי Events ויוצרים מורשים</H2>
         <P>
-          רק מנהלי RINGA או אנשים שקיבלו הרשאה מפורשת מ־RINGA רשאים ליצור Rooms. הרשאה ליצור או
-          לנהל Rooms היא מוגבלת וניתנת לביטול, ואינה מעבירה בעלות בפלטפורמת RINGA או בקניין הרוחני
+          רק מנהלי RINGA או אנשים שקיבלו הרשאה מפורשת מ־RINGA רשאים ליצור Events. הרשאה ליצור או
+          לנהל Events היא מוגבלת וניתנת לביטול, ואינה מעבירה בעלות בפלטפורמת RINGA או בקניין הרוחני
           שלה.
         </P>
         <P>
-          מנהל Room או יוצר מורשה נדרש למסור מידע מדויק באופן סביר, לא להציג באופן מטעה אירוע או
-          מקום, ולא להשתמש ב־Room לצורך פעילות בלתי חוקית, מטעה, מסוכנת או אסורה.
+          מנהל Event או יוצר מורשה נדרש למסור מידע מדויק באופן סביר, לא להציג באופן מטעה אירוע או
+          מקום, ולא להשתמש ב־Event לצורך פעילות בלתי חוקית, מטעה, מסוכנת או אסורה.
         </P>
         <P>
-          RINGA רשאית להגביל, לשנות, להשעות או לסגור Room, לבטל הרשאות ליצירת Rooms או לנקוט פעולה
+          RINGA רשאית להגביל, לשנות, להשעות או לסגור Event, לבטל הרשאות ליצירת Events או לנקוט פעולה
           נגד חשבון כאשר הדבר נדרש באופן סביר לצורכי בטיחות, אבטחה, ציות לדין, אכיפת תנאים אלה או
           הגנה על השירות ומשתמשיו.
         </P>
@@ -149,7 +149,7 @@ const CONTENT: Record<Lang, { title: string; subtitle: string; body: ReactNode }
         <H2>9. קודי QR וקישורי הזמנה</H2>
         <P>
           קודי QR וקישורי הזמנה הם אמצעי גישה ועשויים להיות מיועדים לאירוע, לקהל, לזמן או למטרה
-          מסוימים. אין לשנות, לזייף, לנצל או להפיץ אמצעי גישה ל־Room באופן שנועד לעקוף הגבלות,
+          מסוימים. אין לשנות, לזייף, לנצל או להפיץ אמצעי גישה ל־Event באופן שנועד לעקוף הגבלות,
           להטעות משתמשים, להעמיס על השירות או לאפשר גישה בלתי מורשית.
         </P>
         <P>
@@ -159,7 +159,7 @@ const CONTENT: Record<Lang, { title: string; subtitle: string; body: ReactNode }
 
         <H2>10. Likes, Matches ותקשורת</H2>
         <P>
-          RINGA עשויה לאפשר למשתמשים להביע עניין באמצעות Likes, ובהקשרים מסוימים כגון Rooms עשויה
+          RINGA עשויה לאפשר למשתמשים להביע עניין באמצעות Likes, ובהקשרים מסוימים כגון Events עשויה
           לאפשר Match כאשר מתקיימים התנאים הרלוונטיים לאינטראקציה. הזמינות והכללים של Likes,
           Matches והודעות עשויים להשתנות בין פיצ'רים.
         </P>
@@ -192,7 +192,7 @@ const CONTENT: Record<Lang, { title: string; subtitle: string; body: ReactNode }
         <P>
           "תוכן משתמשים" הוא מידע או חומר שאתם מוסרים, מעלים, מפרסמים, מציגים, מעבירים או הופכים
           לזמינים בדרך אחרת באמצעות השירות, לרבות מידע בפרופיל, תמונות פרופיל, טקסט ביוגרפי, הודעות,
-          דיווחים ותוכן הקשור ל־Rooms.
+          דיווחים ותוכן הקשור ל־Events.
         </P>
         <P>
           אתם שומרים על הבעלות בתוכן משתמשים השייך לכם. אתם אחראים לתוכן שלכם ומצהירים שיש לכם את
@@ -270,7 +270,7 @@ const CONTENT: Record<Lang, { title: string; subtitle: string; body: ReactNode }
         </P>
         <P>
           RINGA רשאית לבדוק דיווחים ולהזהיר, להגביל, להשעות או לסגור חשבונות; להסיר או להגביל תוכן;
-          להגביל פיצ'רים; לסגור Rooms; או לנקוט פעולה סבירה אחרת בהתאם לנסיבות. RINGA אינה מחויבת
+          להגביל פיצ'רים; לסגור Events; או לנקוט פעולה סבירה אחרת בהתאם לנסיבות. RINGA אינה מחויבת
           לחשוף שיטות ניהול תוכן חסויות, מידע בטיחות פנימי, מידע על משתמש אחר או מידע שחשיפתו עלולה
           לפגוע באבטחה או בפרטיות.
         </P>
@@ -297,8 +297,8 @@ const CONTENT: Record<Lang, { title: string; subtitle: string; body: ReactNode }
 
         <H2>19. אירועים, מקומות ומארגנים מצד שלישי</H2>
         <P>
-          Room עשוי להיות קשור לאירוע, מקום, מארגן, עסק, קהילה או פעילות המופעלים על ידי צד שלישי.
-          אלא אם RINGA מציינת במפורש שהיא המארגנת, הצד השלישי — ולא RINGA — אחראי למתחם הפיזי,
+          Event עשוי להיות קשור לאירוע, מקום, מארגן, עסק, קהילה או פעילות המופעלים על ידי צד שלישי.
+          אלא אם RINGA מציינת במפורש שהיא המארגנת, הצד השלישי - ולא RINGA - אחראי למתחם הפיזי,
           להחלטות כניסה, להפעלת האירוע, לצוות, למוצרים, לשירותים, לפעילויות ולחובות הציות שלו.
         </P>
         <P>
@@ -371,7 +371,7 @@ const CONTENT: Record<Lang, { title: string; subtitle: string; body: ReactNode }
         <P>
           השירות עשוי להיקטע, להתעכב, להיות בלתי זמין או לכלול שגיאות. RINGA אינה מתחייבת לזמינות
           רציפה, לכך שכל פיצ'ר יעבוד בכל מכשיר, לכך שיהיו משתמשים ברדיוס מסוים, לכך שיהיו משתתפים
-          ב־Room או לכך שמידע מיקום יהיה תמיד מדויק או עדכני.
+          ב־Event או לכך שמידע מיקום יהיה תמיד מדויק או עדכני.
         </P>
         <P>
           תחזוקה, תקלות רשת, השבתות של ספקי צד שלישי, הגדרות מכשיר, מגבלות מערכת הפעלה, אירועי כוח
@@ -386,7 +386,7 @@ const CONTENT: Record<Lang, { title: string; subtitle: string; body: ReactNode }
         </P>
         <P>
           RINGA אינה מתחייבת שהשירות יהיה רציף, נקי משגיאות או מאובטח; שמידע המיקום יהיה מדויק;
-          שמשתמשים הם מי שהם טוענים שהם; שתוכן משתמשים מדויק; או שאינטראקציה, Match, Room, אירוע או
+          שמשתמשים הם מי שהם טוענים שהם; שתוכן משתמשים מדויק; או שאינטראקציה, Match, Event, אירוע או
           מפגש בעולם האמיתי יהיו בטוחים, מוצלחים או מתאימים.
         </P>
         <P>אין בתנאים אלה כדי לשלול אחריות, התחייבות או זכות צרכנית שלא ניתן לשלול כדין.</P>
@@ -494,7 +494,7 @@ const CONTENT: Record<Lang, { title: string; subtitle: string; body: ReactNode }
     body: (
       <>
         <P>
-          These Terms govern access to and use of RINGA, including Nearby, Rooms, messaging,
+          These Terms govern access to and use of RINGA, including Nearby, Events, messaging,
           location-based features and related services.
         </P>
 
@@ -551,11 +551,11 @@ const CONTENT: Record<Lang, { title: string; subtitle: string; body: ReactNode }
         <H2>4. RINGA Service</H2>
         <P>
           RINGA is a location-based social and community platform designed to help people discover
-          people, communities, Rooms, events, and opportunities for interaction in the real world
+          people, communities, Events, events, and opportunities for interaction in the real world
           that are near them.
         </P>
         <P>
-          The Service may include Nearby, Rooms, profile discovery, Likes, Matches, messaging,
+          The Service may include Nearby, Events, profile discovery, Likes, Matches, messaging,
           location-based functions, Live Activities, notifications, privacy controls, and other
           features that RINGA may add, change, or remove over time.
         </P>
@@ -563,7 +563,7 @@ const CONTENT: Record<Lang, { title: string; subtitle: string; body: ReactNode }
           RINGA provides technology that enables discovery and communication. Unless RINGA
           expressly states otherwise, RINGA is not the organizer, owner, or operator of a
           third-party venue or event, and does not guarantee that any connection, Match,
-          conversation, meeting, Room, or event will occur or produce any particular outcome.
+          conversation, meeting, Event, or event will occur or produce any particular outcome.
         </P>
 
         <H2>5. Nearby and Location-Based Features</H2>
@@ -602,37 +602,37 @@ const CONTENT: Record<Lang, { title: string; subtitle: string; body: ReactNode }
           the feature is presented in the Service at that time.
         </P>
 
-        <H2>7. Rooms</H2>
+        <H2>7. Events</H2>
         <P>
-          Rooms are spaces within RINGA that may be related to an event, venue, community,
-          activity, or other defined experience. A Room may be private or configured otherwise by
-          the Room administrator.
+          Events are spaces within RINGA that may be related to an event, venue, community,
+          activity, or other defined experience. A Event may be private or configured otherwise by
+          the Event administrator.
         </P>
         <P>
-          Users may join a Room through a QR code, an invite link, or another method made available
+          Users may join a Event through a QR code, an invite link, or another method made available
           by RINGA. Access to a QR code or link does not grant a right of entry to a physical venue
-          or event, and RINGA does not guarantee that a Room, venue, or event will remain
+          or event, and RINGA does not guarantee that a Event, venue, or event will remain
           available.
         </P>
         <P>
-          The duration and availability of a Room are determined by its configuration.
-          Participation in a Room may continue for the defined period even if the participant has
+          The duration and availability of a Event are determined by its configuration.
+          Participation in a Event may continue for the defined period even if the participant has
           left the physical location, subject to Service functionality and the relevant settings.
         </P>
 
-        <H2>8. Room Administrators and Authorized Creators</H2>
+        <H2>8. Event Administrators and Authorized Creators</H2>
         <P>
           Only RINGA administrators or individuals who have received express authorization from
-          RINGA may create Rooms. Permission to create or manage Rooms is limited and revocable,
+          RINGA may create Events. Permission to create or manage Events is limited and revocable,
           and does not transfer ownership of the RINGA platform or its intellectual property.
         </P>
         <P>
-          A Room administrator or authorized creator is required to provide reasonably accurate
-          information, not to misrepresent an event or venue, and not to use a Room for illegal,
+          A Event administrator or authorized creator is required to provide reasonably accurate
+          information, not to misrepresent an event or venue, and not to use a Event for illegal,
           misleading, dangerous, or prohibited activity.
         </P>
         <P>
-          RINGA may restrict, change, suspend, or close a Room, revoke permissions to create Rooms,
+          RINGA may restrict, change, suspend, or close a Event, revoke permissions to create Events,
           or take action against an account where reasonably necessary for safety, security, legal
           compliance, enforcement of these Terms, or protection of the Service and its users.
         </P>
@@ -640,7 +640,7 @@ const CONTENT: Record<Lang, { title: string; subtitle: string; body: ReactNode }
         <H2>9. QR Codes and Invite Links</H2>
         <P>
           QR codes and invite links are access mechanisms and may be intended for a specific event,
-          audience, time, or purpose. You may not modify, forge, exploit, or distribute a Room
+          audience, time, or purpose. You may not modify, forge, exploit, or distribute a Event
           access mechanism in a manner intended to bypass restrictions, mislead users, burden the
           Service, or enable unauthorized access.
         </P>
@@ -652,7 +652,7 @@ const CONTENT: Record<Lang, { title: string; subtitle: string; body: ReactNode }
         <H2>10. Likes, Matches and Communication</H2>
         <P>
           RINGA may allow users to express interest through Likes, and in certain contexts such as
-          Rooms may enable a Match when the relevant conditions for interaction are met. The
+          Events may enable a Match when the relevant conditions for interaction are met. The
           availability and rules of Likes, Matches, and messages may vary between features.
         </P>
         <P>
@@ -686,7 +686,7 @@ const CONTENT: Record<Lang, { title: string; subtitle: string; body: ReactNode }
         <P>
           "User Content" is information or material you submit, upload, publish, display, transmit,
           or otherwise make available through the Service, including profile information, profile
-          photos, biography text, messages, reports, and Room-related content.
+          photos, biography text, messages, reports, and Event-related content.
         </P>
         <P>
           You retain ownership of the User Content that belongs to you. You are responsible for
@@ -776,7 +776,7 @@ const CONTENT: Record<Lang, { title: string; subtitle: string; body: ReactNode }
         </P>
         <P>
           RINGA may review reports and warn, restrict, suspend, or close accounts; remove or
-          restrict content; restrict features; close Rooms; or take other reasonable action
+          restrict content; restrict features; close Events; or take other reasonable action
           appropriate to the circumstances. RINGA is not obligated to disclose confidential
           moderation methods, internal safety information, information about another user, or
           information whose disclosure could harm security or privacy.
@@ -807,9 +807,9 @@ const CONTENT: Record<Lang, { title: string; subtitle: string; body: ReactNode }
 
         <H2>19. Third-Party Events, Venues and Organizers</H2>
         <P>
-          A Room may be related to an event, venue, organizer, business, community, or activity
+          A Event may be related to an event, venue, organizer, business, community, or activity
           operated by a third party. Unless RINGA expressly states that it is the organizer, the
-          third party — and not RINGA — is responsible for the physical premises, admission
+          third party - and not RINGA - is responsible for the physical premises, admission
           decisions, running the event, staff, products, services, activities, and its compliance
           obligations.
         </P>
@@ -889,7 +889,7 @@ const CONTENT: Record<Lang, { title: string; subtitle: string; body: ReactNode }
         <P>
           The Service may be interrupted, delayed, unavailable, or contain errors. RINGA does not
           guarantee continuous availability, that every feature will work on every device, that
-          there will be users within a certain radius, that there will be participants in a Room, or
+          there will be users within a certain radius, that there will be participants in a Event, or
           that location information will always be accurate or up to date.
         </P>
         <P>
@@ -908,7 +908,7 @@ const CONTENT: Record<Lang, { title: string; subtitle: string; body: ReactNode }
         <P>
           RINGA does not guarantee that the Service will be continuous, error-free, or secure; that
           location information will be accurate; that users are who they claim to be; that User
-          Content is accurate; or that an interaction, Match, Room, event, or real-world meeting
+          Content is accurate; or that an interaction, Match, Event, event, or real-world meeting
           will be safe, successful, or suitable.
         </P>
         <P>

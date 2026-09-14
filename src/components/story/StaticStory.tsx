@@ -1,4 +1,5 @@
 import { Clock, Ghost, MessageCircle, Radar, Users, type LucideIcon } from "lucide-react";
+import InfinityLogo from "../InfinityLogo";
 import { useLang } from "../../i18n/LanguageContext";
 
 /**
@@ -20,6 +21,8 @@ export default function StaticStory() {
 
   return (
     <section id="top" dir={dir} className="relative mx-auto max-w-2xl px-6 pt-28 pb-12">
+      <InfinityLogo className="mx-auto mb-12 h-32 w-40" />
+      <h1 className="mb-12 text-center text-3xl font-black">RINGA</h1>
       <div className="flex flex-col gap-14">
         {ORDER.map((key) => {
           const s = t.story.scenes[key];

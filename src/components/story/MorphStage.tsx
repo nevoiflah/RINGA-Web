@@ -1,175 +1,96 @@
-import { useEffect, useRef, useState } from "react";
 import { motion, useTransform, type MotionValue } from "framer-motion";
+import { Heart, ShieldCheck, EyeOff, MapPin, Clock } from "lucide-react";
 import type { Dict } from "../../i18n/translations";
-import { Avatar, INF_PATH, PEOPLE } from "./primitives";
-import { W } from "./timeline";
+import InfinityLogo from "../InfinityLogo";
+import { Avatar, PEOPLE } from "./primitives";
 
-/* ──────────────────────────────────────────────
-   The opener + the persistent core circle. The ∞
-   becomes the radar's centre, minimises into the
-   Live Activity coin, then the SAME circle expands
-   into the Rooms ring and shrinks into the Delay
-   countdown ring — one element through the whole
-   first half. Feature content lives in <Features/>.
-   ────────────────────────────────────────────── */
+type Props = { p: MotionValue<number>; he: boolean; t: Dict };
+const fade = [0, 1, 1, 0];
 
-const C = { orange: "#F27059", orangeLight: "#F4845F", purple: "#9B7FA7", panel: "#241520", root: "#1A0F1E", sub: "#A89090" };
-const ARC = 2 * Math.PI * 47;
+function Ring({ p, i }: { p: MotionValue<number>; i: number }) {
+  const scale = useTransform(p, [0, .12, .26, .35, .92, 1], [.85, 1, 1, 1.3, 1.3, .85]);
+  const scaleY = useTransform(p, [0, .12, .92, 1], [.3, 1, 1, .3]);
+  const y = useTransform(p, [0, .12, .92, 1], [82, 0, 0, 82]);
+  const opacity = useTransform(p, [0, .1, .26, .35, .92, 1], [.8, .5, .5, 0, 0, .6]);
+  return <motion.div style={{ scale, scaleY, y, opacity, inset: `${i * 12}%` }} className="absolute rounded-full border border-coral/45" />;
+}
 
-type Anchors = { bannerX: number; bannerY: number; bannerScale: number };
-
-function Ring({ p, s, i }: { p: MotionValue<number>; s: number; i: number }) {
-  const inA = 0.09 + i * 0.012;
-  const scale = useTransform(p, [inA, inA + 0.05, W.scanEnd, W.minEnd], [0, 1, 1, 0]);
-  const opacity = useTransform(p, [inA, inA + 0.03, W.scanEnd, W.minEnd], [0, 1, 1, 0]);
+/** Each person keeps the same DOM node as radar positions become list rows. */
+function Person({ p, i, he }: { p: MotionValue<number>; i: number; he: boolean }) {
+  const person = PEOPLE[i];
+  const radar = [[17, 26], [76, 31], [22, 73], [73, 76]][i];
+  const left = useTransform(p, [.24, .35, .49, .57], [radar[0] + "%", he ? "86%" : "14%", he ? "86%" : "14%", (i === 0 ? 41 : 59) + "%"]);
+  const top = useTransform(p, [.24, .35, .49, .57, .62, .67], [radar[1] + "%", (27 + i * 19) + "%", (27 + i * 19) + "%", "25%", "25%", "17%"]);
+  const opacity = useTransform(p, [.075 + i * .01, .13 + i * .01, i < 2 ? .74 : .49, i < 2 ? .81 : .56], fade);
+  const scale = useTransform(p, [.49, .57, .62, .67], [1, i < 2 ? 1.2 : .7, 1.2, .8]);
+  const detail = useTransform(p, [.28, .35, .48, .54], fade);
+  const distance = useTransform(p, [.1, .15, .24, .29], fade);
+  const like = useTransform(p, [.44, .48, .61, .66], fade);
   return (
-    <motion.span
-      style={{ x: "-50%", y: "-50%", scale, opacity, width: `${s * 100}%`, height: `${s * 100}%` }}
-      className="absolute left-1/2 top-1/2 rounded-full border border-coral/25"
-    />
+    <motion.div style={{ left, top, opacity }} className="absolute z-20 h-11 w-11 -translate-x-1/2 -translate-y-1/2">
+      <motion.div style={{ scale }}><Avatar src={person.src} className="h-11 w-11" /></motion.div>
+      <motion.span style={{ opacity: distance }} className="absolute -bottom-5 left-1/2 -translate-x-1/2 rounded-full bg-bg/80 px-2 py-0.5 text-[10px] text-ink/80">{person.dist}</motion.span>
+      <motion.div style={{ opacity: detail }} className={`absolute top-1 flex w-[190px] items-center justify-between ${he ? "right-14 flex-row-reverse text-right" : "left-14"}`}>
+        <span><strong className="block text-sm">{person.name[he ? "he" : "en"]}</strong><span className="text-[10px] text-muted">{he ? "באירוע" : "At the event"}</span></span>
+        <Heart className="h-4 w-4 text-coral" />
+      </motion.div>
+      {i < 2 && <motion.span style={{ opacity: like }} className="absolute -right-1 -bottom-1 rounded-full bg-coral p-1 text-white"><Heart className="h-3 w-3 fill-current" /></motion.span>}
+    </motion.div>
   );
 }
 
-function Blip({ p, src, dist, top, left, order }: { p: MotionValue<number>; src: string; dist: string; top: string; left: string; order: number }) {
-  const s0 = 0.135 + order * 0.012;
-  const opacity = useTransform(p, [s0, s0 + 0.02, W.scanEnd, W.minEnd - 0.02], [0, 1, 1, 0]);
-  const scale = useTransform(p, [s0, s0 + 0.03, W.minEnd - 0.02, W.minEnd], [0.2, 1, 1, 0.2]);
+export default function MorphStage({ p, he, t }: Props) {
+  const frameOpacity = useTransform(p, [.27, .35, .91, .97], fade);
+  const radius = useTransform(p, [.27, .35, .75, .84], [150, 28, 28, 38]);
+  const frameScale = useTransform(p, [.27, .35, .91, .98], [.9, 1, 1, .85]);
+  const logoScale = useTransform(p, [0, .12, .26, .34, .91, 1], [1.35, .46, .46, .3, .3, 1]);
+  const logoOpacity = useTransform(p, [.26, .34, .92, .99], [1, 0, 0, 1]);
+  const opener = useTransform(p, [0, .055, .105], [1, 1, 0]);
+  const events = useTransform(p, [.29, .36, .48, .54], fade);
+  const match = useTransform(p, [.51, .57, .61, .66], fade);
+  const chat = useTransform(p, [.63, .69, .75, .81], fade);
+  const privacy = useTransform(p, [.77, .83, .91, .97], fade);
+  const reply = useTransform(p, [.69, .72], [0, 1]);
+  const lastReply = useTransform(p, [.72, .75], [0, 1]);
+  const sweep = useTransform(p, [0, .3], [0, 300]);
+  const radarOpacity = useTransform(p, [.06, .12, .26, .33], fade);
+  const dir = he ? "rtl" : "ltr";
+
   return (
-    <div className="absolute" style={{ top, left }}>
-      <div className="-translate-x-1/2 -translate-y-1/2">
-        <motion.div style={{ opacity, scale }} className="relative">
-          <span aria-hidden className="absolute left-1/2 top-1/2 h-12 w-12 -translate-x-1/2 -translate-y-1/2 rounded-full border border-coral/50" style={{ animation: "radar-ping 2.6s ease-out infinite" }} />
-          <Avatar src={src} className="h-10 w-10" />
-          <span className="absolute -bottom-4 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-black/55 px-1.5 py-0.5 text-[9px] font-bold text-white backdrop-blur">{dist}</span>
-        </motion.div>
-      </div>
+    <div className="story-visual absolute left-1/2 top-[40%] -translate-x-1/2 -translate-y-1/2" aria-hidden="true">
+      {[0, 1, 2].map(i => <Ring key={i} p={p} i={i} />)}
+      <motion.div style={{ rotate: sweep, opacity: radarOpacity, background: "conic-gradient(from 0deg, transparent 270deg, #FF625730 360deg)" }} className="absolute inset-0 rounded-full" />
+      <motion.div style={{ opacity: frameOpacity, borderRadius: radius, scale: frameScale }} className="absolute inset-0 border border-line bg-surface/90 shadow-[0_24px_80px_#120B1480]" />
+      <motion.div style={{ opacity: logoOpacity, scale: logoScale }} className="absolute inset-[18%] flex items-center justify-center"><InfinityLogo className="w-full" rings={false} /></motion.div>
+      <motion.div style={{ opacity: opener }} className="absolute inset-x-[-8%] top-full mt-7 text-center">
+        <p className="text-gradient text-4xl font-black tracking-[.08em]">RINGA</p>
+        <p className="mt-3 text-base text-ink/80">{t.hero.sub}</p>
+      </motion.div>
+      <motion.div style={{ opacity: events }} dir={dir} className="absolute inset-x-6 top-5 flex items-center justify-between border-b border-line pb-3">
+        <strong className="text-sm">{t.story.labels.roomName}</strong><span className="text-[10px] text-coral">QR / Link</span>
+      </motion.div>
+      {PEOPLE.slice(0, 4).map((person, i) => <Person key={person.src} p={p} i={i} he={he} />)}
+      <motion.div style={{ opacity: match }} className="absolute inset-x-5 top-[46%] text-center">
+        <Heart className="mx-auto h-9 w-9 fill-coral text-coral" />
+        <p className="mt-3 text-2xl font-black">{he ? "יש Match!" : "It's a Match!"}</p>
+        <p className="mt-2 text-sm text-muted">{he ? "Like הדדי. אפשר להתחיל לדבר." : "Mutual Likes. Time to say hello."}</p>
+      </motion.div>
+      <motion.div style={{ opacity: chat }} dir={dir} className="absolute inset-x-5 top-[31%] space-y-3 text-[13px] leading-relaxed">
+        <div className="max-w-[87%] rounded-2xl rounded-ss-sm bg-active px-3 py-2">{he ? "היי! כיף לפגוש אותך כאן 👋" : "Hey! Great to meet you here 👋"}</div>
+        <motion.div style={{ opacity: reply }} className="ms-auto max-w-[87%] rounded-2xl rounded-se-sm bg-coral/20 px-3 py-2">{t.story.labels.replyThem}</motion.div>
+        <motion.div style={{ opacity: lastReply }} className="max-w-[87%] rounded-2xl rounded-ss-sm bg-active px-3 py-2">{t.story.labels.replyMe}</motion.div>
+      </motion.div>
+      <motion.div style={{ opacity: privacy }} dir={dir} className="absolute inset-x-6 top-7">
+        <ShieldCheck className="mx-auto h-10 w-10 text-coral" />
+        <p className="mt-3 text-center text-lg font-bold">{he ? "בשליטה שלך" : "You're in control"}</p>
+        <div className="mt-6 flex items-center gap-3 rounded-xl bg-card p-3 text-sm"><EyeOff className="h-5 w-5 text-coral" /><span className="flex-1">{t.story.labels.ghostMode}</span><span className="h-4 w-7 rounded-full bg-coral p-0.5"><span className="block h-3 w-3 rounded-full bg-white" /></span></div>
+        <div className="mt-3 flex items-center gap-3 rounded-xl bg-card p-3 text-sm"><MapPin className="h-5 w-5 text-purple" />{t.story.labels.zoneHome} · {t.story.labels.zoneWork}</div>
+      </motion.div>
     </div>
   );
 }
 
-export default function MorphStage({ p, he, t }: { p: MotionValue<number>; he: boolean; t: Dict }) {
-  const [a, setA] = useState<Anchors>({ bannerX: -96, bannerY: 0, bannerScale: 0.5 });
-  const stageRef = useRef<HTMLDivElement>(null);
-  const coinBoxRef = useRef<HTMLDivElement>(null);
-  const bannerSlotRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const measure = () => {
-      const stage = stageRef.current, coin = coinBoxRef.current, slot = bannerSlotRef.current;
-      if (!stage || !coin || !slot) return;
-      const sc = stage.getBoundingClientRect();
-      const sb = slot.getBoundingClientRect();
-      const coinW = coin.offsetWidth || 1;
-      setA({
-        bannerX: sb.left + sb.width / 2 - (sc.left + sc.width / 2),
-        bannerY: sb.top + sb.height / 2 - (sc.top + sc.height / 2),
-        bannerScale: sb.width / coinW,
-      });
-    };
-    measure();
-    const tmo = setTimeout(measure, 250);
-    window.addEventListener("resize", measure);
-    return () => { clearTimeout(tmo); window.removeEventListener("resize", measure); };
-  }, [he]);
-
-  // core circle scale: ∞(big) → radar centre → coin → banner slot → coin → room ring → countdown ring
-  const coreScale = useTransform(
-    p,
-    [0, W.fillEnd, W.shrink, W.scanEnd, W.minEnd, W.bannerIn, W.bannerIn + 0.025, W.bannerOut - 0.025, W.bannerOut, W.roomsIn, W.roomsIn + 0.05, W.roomsOut, W.roomsOut + 0.03, W.delayHold, W.delayOut],
-    [4.6, 4.6, 0.8, 0.8, 1, 1, a.bannerScale, a.bannerScale, 1, 1, 3.8, 3.8, 1.7, 1.7, 1.7],
-  );
-  const coreX = useTransform(p, [W.bannerIn, W.bannerIn + 0.025, W.bannerOut - 0.025, W.bannerOut], [0, a.bannerX, a.bannerX, 0]);
-  const coreY = useTransform(p, [W.bannerIn, W.bannerIn + 0.025, W.bannerOut - 0.025, W.bannerOut], [0, a.bannerY, a.bannerY, 0]);
-  const coreOpacity = useTransform(p, [W.delayOut - 0.02, W.delayOut + 0.02], [1, 0]);
-
-  const drawFill = useTransform(p, [0, W.fillEnd], [0, 1]);
-  const outlineO = useTransform(p, [0, W.fillEnd, W.fillEnd + 0.02], [1, 1, 0]);
-  const infGradO = useTransform(p, [W.scanEnd, W.minEnd], [1, 0]);
-  const coinO = useTransform(p, [W.scanEnd, W.minEnd, W.roomsIn, W.roomsIn + 0.04], [0, 1, 1, 0]); // disc + ∞
-  const ringO = useTransform(p, [W.roomsIn, W.roomsIn + 0.04, W.delayOut - 0.02, W.delayOut + 0.01], [0, 1, 1, 0]);
-  const arcO = useTransform(p, [W.delayIn, W.delayIn + 0.02, W.delayOut - 0.02, W.delayOut], [0, 1, 1, 0]);
-  const arcOffset = useTransform(p, [W.delayIn + 0.01, W.delayHold + 0.02], [ARC, ARC * 0.08]);
-
-  const radarBodyO = useTransform(p, [0.09, 0.14, W.scanEnd, W.minEnd], [0, 1, 1, 0]);
-  const scanO = useTransform(p, [0.115, 0.135, 0.17, 0.182], [0, 1, 1, 0]);
-  const foundO = useTransform(p, [0.17, 0.185, W.scanEnd, W.minEnd - 0.02], [0, 1, 1, 0]);
-
-  const bannerO = useTransform(p, [W.bannerIn + 0.02, W.bannerIn + 0.05, W.bannerOut - 0.05, W.bannerOut - 0.01], [0, 1, 1, 0]);
-  const bannerTextX = useTransform(p, [W.bannerIn + 0.03, W.bannerIn + 0.07], [he ? 18 : -18, 0]);
-
-  return (
-    <div ref={stageRef} className="pointer-events-none absolute inset-0 z-10">
-      {/* RADAR body */}
-      <div className="absolute inset-0 grid place-items-center">
-        <motion.div style={{ opacity: radarBodyO }} className="relative grid h-[min(62vw,290px,38vh)] w-[min(62vw,290px,38vh)] place-items-center">
-          {[1, 0.66, 0.36].map((s, i) => (<Ring key={s} p={p} s={s} i={i} />))}
-          <span aria-hidden className="absolute inset-0 rounded-full" style={{ background: "conic-gradient(from 0deg, rgba(255,107,107,0) 0deg, rgba(255,107,107,0.32) 46deg, rgba(255,107,107,0) 92deg)", animation: "radar-spin 4.2s linear infinite" }} />
-          <Blip p={p} src={PEOPLE[0].src} dist={PEOPLE[0].dist} top="26%" left="32%" order={0} />
-          <Blip p={p} src={PEOPLE[1].src} dist={PEOPLE[1].dist} top="34%" left="70%" order={1} />
-          <Blip p={p} src={PEOPLE[2].src} dist={PEOPLE[2].dist} top="66%" left="62%" order={2} />
-          <Blip p={p} src={PEOPLE[3].src} dist={PEOPLE[3].dist} top="62%" left="26%" order={3} />
-          <div className="absolute -bottom-9 left-1/2 -translate-x-1/2">
-            <div className="relative h-8 w-44">
-              <motion.span style={{ opacity: scanO }} className="glass absolute inset-0 flex items-center justify-center gap-2 rounded-full text-[0.8rem] font-semibold text-ink/80">
-                <span className="h-1.5 w-1.5 animate-ping rounded-full bg-coral" />{t.story.labels.scanning}
-              </motion.span>
-              <motion.span style={{ opacity: foundO }} className="glass absolute inset-0 flex items-center justify-center gap-2 rounded-full text-[0.8rem] font-bold text-ink">
-                <span className="text-coral">4</span> {t.story.labels.nearby}
-              </motion.span>
-            </div>
-          </div>
-        </motion.div>
-      </div>
-
-      {/* LIVE ACTIVITY banner */}
-      <div className="absolute inset-0 grid place-items-center">
-        <motion.div dir={he ? "rtl" : "ltr"} style={{ opacity: bannerO, background: `linear-gradient(135deg, ${C.panel}, ${C.root})`, boxShadow: "0 22px 60px rgba(0,0,0,0.6)" }} className="flex items-center gap-3.5 rounded-[28px] px-4 py-3.5 ring-1 ring-white/10">
-          <span ref={bannerSlotRef} className="h-[4.6vh] w-[4.6vh] shrink-0" />
-          <motion.div style={{ x: bannerTextX }} className="flex items-center gap-3.5">
-            <div className="min-w-0 text-start" style={{ color: C.sub }}>
-              <div className="flex items-center gap-1.5">
-                <span className="text-[0.84rem] font-black tracking-wide text-white">RINGA</span>
-                <span className="h-1.5 w-1.5 rounded-full" style={{ background: C.orange }} />
-              </div>
-              <p className="text-[1.05rem] font-extrabold leading-tight text-white">4 {he ? "אנשים בסביבה" : "people nearby"}</p>
-              <p className="text-[0.78rem] font-medium">{he ? "לחץ כדי לראות מי קרוב" : "Tap to see who's close"}</p>
-            </div>
-            <div className="shrink-0 text-center leading-none">
-              <p className="text-[2.1rem] font-black tabular-nums" style={{ backgroundImage: `linear-gradient(135deg, ${C.orangeLight}, ${C.orange})`, WebkitBackgroundClip: "text", backgroundClip: "text", color: "transparent" }}>4</p>
-              <p className="text-[0.72rem] font-semibold" style={{ color: C.sub }}>{he ? "בסביבה" : "nearby"}</p>
-            </div>
-          </motion.div>
-        </motion.div>
-      </div>
-
-      {/* THE CORE — ∞ → coin → room ring → countdown ring */}
-      <div className="absolute inset-0 grid place-items-center">
-        <motion.div style={{ x: coreX, y: coreY, scale: coreScale, opacity: coreOpacity }}>
-          <div ref={coinBoxRef} className="relative grid h-[9vh] w-[9vh] place-items-center">
-            {/* filled coin disc */}
-            <motion.span style={{ opacity: coinO }} className="absolute inset-0 rounded-full ring-1 ring-white/25">
-              <span className="absolute inset-0 rounded-full" style={{ background: `linear-gradient(135deg, ${C.orangeLight} 0%, ${C.orange} 48%, ${C.purple} 100%)`, boxShadow: "0 0 30px rgba(255,138,92,0.5)" }} />
-            </motion.span>
-            {/* hollow ring + countdown arc */}
-            <svg viewBox="0 0 100 100" className="absolute inset-0 h-full w-full -rotate-90" fill="none" style={{ filter: "drop-shadow(0 0 8px rgba(255,107,107,0.4))" }}>
-              <motion.circle cx="50" cy="50" r="47" stroke="var(--color-coral)" strokeWidth="1" style={{ opacity: ringO }} />
-              <motion.circle cx="50" cy="50" r="47" stroke="var(--color-coral)" strokeWidth="2" strokeLinecap="round" strokeDasharray={ARC} style={{ strokeDashoffset: arcOffset, opacity: arcO }} />
-            </svg>
-            {/* the ∞ */}
-            <svg viewBox="0 0 100 50" className="relative h-[4.6vh] w-[7vh]" fill="none">
-              <defs>
-                <linearGradient id="morph-inf" x1="0" y1="0" x2="1" y2="1">
-                  <stop offset="0%" stopColor="var(--color-coral)" />
-                  <stop offset="100%" stopColor="var(--color-purple)" />
-                </linearGradient>
-              </defs>
-              <motion.path d={INF_PATH} stroke="rgba(255,255,255,0.26)" strokeWidth={8} strokeLinecap="round" strokeLinejoin="round" style={{ opacity: outlineO }} />
-              <motion.path d={INF_PATH} stroke="url(#morph-inf)" strokeWidth={8} strokeLinecap="round" strokeLinejoin="round" style={{ pathLength: drawFill, opacity: infGradO }} />
-              <motion.path d={INF_PATH} stroke="#fff" strokeWidth={8} strokeLinecap="round" strokeLinejoin="round" style={{ opacity: coinO }} />
-            </svg>
-          </div>
-        </motion.div>
-      </div>
-    </div>
-  );
+/** The delay feature belongs to Nearby, separately from the EVENT match flow. */
+export function NearbyDelay({ t }: { t: Dict }) {
+  return <div className="mx-auto mt-4 flex max-w-md items-start justify-center gap-2 text-xs leading-relaxed text-muted"><Clock className="mt-0.5 h-4 w-4 shrink-0 text-coral" /><span>{t.story.scenes.delay.desc}</span></div>;
 }

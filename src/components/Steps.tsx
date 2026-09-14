@@ -7,7 +7,7 @@ const ICONS: LucideIcon[] = [Radar, Users, Send];
 export default function Steps() {
   const { t } = useLang();
   return (
-    <section className="relative mx-auto max-w-5xl px-6 py-24 sm:py-28">
+    <section className="relative mx-auto max-w-5xl px-6 py-16 sm:py-20">
       <Reveal className="text-center">
         <p className="text-[0.8rem] font-bold uppercase tracking-[0.24em] text-coral">
           {t.steps.eyebrow}
@@ -29,7 +29,7 @@ export default function Steps() {
           return (
             <Reveal key={i} index={i} className="relative">
               <div className="flex h-full flex-col items-center px-6 py-4 text-center">
-                <span className="relative flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-coral to-purple text-white shadow-[0_14px_34px_rgba(255,107,107,0.4)]">
+                <span className="relative flex h-16 w-16 items-center justify-center rounded-2xl bg-coral/15 text-coral ring-1 ring-coral/25">
                   <Icon className="h-7 w-7" />
                   <span className="absolute -right-2.5 -top-2.5 flex h-7 w-7 items-center justify-center rounded-full text-[0.72rem] font-black text-coral backdrop-blur-sm" style={{ background: "rgba(8,6,14,0.7)" }}>
                     {String(i + 1).padStart(2, "0")}

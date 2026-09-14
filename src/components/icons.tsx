@@ -26,7 +26,7 @@ export const ChevronDown = LChevronDown;
 export const MenuIcon = Menu;
 export const CloseIcon = X;
 
-/* Brand glyphs (kept custom — Lucide has no official brand marks). */
+/* Brand glyphs (kept custom - Lucide has no official brand marks). */
 
 export const AppleIcon = (p: SVGProps<SVGSVGElement>) => (
   <svg viewBox="0 0 24 24" fill="currentColor" {...p}>

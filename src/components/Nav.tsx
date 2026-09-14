@@ -9,7 +9,7 @@ type NavLink = { label: string; href?: string; to?: string };
 
 const Brand = () => (
   <span className="inline-flex items-center gap-2">
-    <InfinityLogo className="h-5 w-10" />
+    <InfinityLogo className="h-9 w-9" />
     <span className="text-gradient text-2xl font-black tracking-wide">RINGA</span>
   </span>
 );
@@ -72,6 +72,7 @@ export default function Nav() {
   }, []);
 
   const links: NavLink[] = [
+    { label: "EVENTS", href: isHome ? "#events" : "/#events" },
     { label: t.footer.privacy, to: "/privacy" },
     { label: t.footer.terms, to: "/terms" },
   ];
@@ -102,11 +103,11 @@ export default function Nav() {
     >
       <div className="flex items-center justify-between px-5 py-3.5 sm:px-12">
         {isHome ? (
-          <a href="#top" aria-label="RINGA — home">
+          <a href="#top" aria-label="RINGA - home">
             <Brand />
           </a>
         ) : (
-          <Link to="/" aria-label="RINGA — home">
+          <Link to="/" aria-label="RINGA - home">
             <Brand />
           </Link>
         )}
