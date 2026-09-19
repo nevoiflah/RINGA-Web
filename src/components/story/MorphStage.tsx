@@ -29,7 +29,7 @@ function Person({ p, i, he }: { p: MotionValue<number>; i: number; he: boolean }
   return (
     <motion.div style={{ left, top, opacity }} className="absolute z-20 h-11 w-11 -translate-x-1/2 -translate-y-1/2">
       <motion.div style={{ scale }}><Avatar src={person.src} className="h-11 w-11" /></motion.div>
-      <motion.span style={{ opacity: distance }} className="absolute -bottom-5 left-1/2 -translate-x-1/2 rounded-full bg-bg/80 px-2 py-0.5 text-[10px] text-ink/80">{person.dist}</motion.span>
+      <motion.span style={{ opacity: distance }} className="absolute -bottom-5 left-1/2 -translate-x-1/2 rounded-full bg-bg/80 px-2 py-0.5 text-[10px] text-ink/80">{he ? "בסביבה" : "Nearby"}</motion.span>
       <motion.div style={{ opacity: detail }} className={`absolute top-1 flex w-[190px] items-center justify-between ${he ? "right-14 flex-row-reverse text-right" : "left-14"}`}>
         <span><strong className="block text-sm">{person.name[he ? "he" : "en"]}</strong><span className="text-[10px] text-muted">{he ? "באירוע" : "At the event"}</span></span>
         <Heart className="h-4 w-4 text-coral" />

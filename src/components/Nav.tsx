@@ -50,7 +50,7 @@ function LangToggle() {
 }
 
 export default function Nav() {
-  const { t } = useLang();
+  const { t, lang } = useLang();
   const { pathname } = useLocation();
   const isHome = pathname === "/";
   const [scrolled, setScrolled] = useState(false);
@@ -72,7 +72,7 @@ export default function Nav() {
   }, []);
 
   const links: NavLink[] = [
-    { label: "EVENTS", href: isHome ? "#events" : "/#events" },
+    { label: lang === "he" ? "אירועים" : "EVENTS", href: isHome ? "#events" : "/#events" },
     { label: t.footer.privacy, to: "/privacy" },
     { label: t.footer.terms, to: "/terms" },
   ];

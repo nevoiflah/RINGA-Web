@@ -149,7 +149,7 @@ export function Nearby({ he }: { he: boolean }) {
               <div className="mt-1.5 flex flex-wrap items-center gap-1.5">
                 <span className="inline-flex items-center gap-1 rounded-full bg-white/20 px-2 py-0.5 text-[10px] font-bold backdrop-blur">
                   <MapPin className="h-2.5 w-2.5" />
-                  {he ? "80 מ׳ ממך" : "80m away"}
+                  {he ? "בסביבה שלך" : "Nearby"}
                 </span>
                 <span
                   className="inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[10px] font-bold"

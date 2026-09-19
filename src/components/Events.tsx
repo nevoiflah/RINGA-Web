@@ -25,14 +25,14 @@ const COPY = {
     title: "אותו אירוע. חיבורים חדשים.",
     intro: "גלו מי עוד הצטרף, מצאו מישהו שמעניין אתכם ותנו ל-Like הדדי לפתוח שיחה.",
     nearby: "קרובים", nearbyBody: "אנשים שנמצאים עד 200 מטר מכם, בזמן אמת. כשהם יוצאים מהטווח, הם נעלמים ממסך קרובים.",
-    events: "EVENTS", eventsBody: "אנשים שהצטרפו לאותו אירוע באמצעות QR או קישור הזמנה. ההצטרפות אינה תלויה במיקום שלכם.",
+    events: "אירועים", eventsBody: "אנשים שהצטרפו לאותו אירוע באמצעות QR או קישור הזמנה. ההצטרפות אינה תלויה במיקום שלכם.",
     steps: [
       { title: "סריקה אחת. ואתם בפנים.", body: "סרקו את קוד ה-QR של האירוע או פתחו את קישור ההזמנה כדי להצטרף." },
       { title: "גלו מי עוד הצטרף.", body: "עיינו ברשימת המשתתפים, גלו פרופילים ושלחו Like למי שמעניין אתכם." },
       { title: "Like הדדי. יש Match.", body: "כשאתם עושים Like אחד לשני, נוצר Match ואפשר להתחיל לדבר." },
     ],
     join: "QR או קישור הזמנה", attendees: "משתתפים באירוע", like: "Like", match: "יש Match!", chat: "אפשר להתחיל לדבר",
-    stay: "יוצאים מהמקום. נשארים באירוע.", stayBody: "EVENTS לא מבוססים על GPS. מרגע שהצטרפתם, תישארו באירוע גם אם יצאתם מהמקום או סגרתם את האפליקציה, עד לסגירת האירוע.",
+    stay: "יוצאים מהמקום. נשארים באירוע.", stayBody: "אירועים לא מבוססים על GPS. מרגע שהצטרפתם, תישארו באירוע גם אם יצאתם מהמקום או סגרתם את האפליקציה, עד לסגירת האירוע.",
     time: "יודעים מתי האירוע נסגר.", timeBody: "משך האירוע כברירת מחדל הוא 24 שעות. בדקו את שעת הסגירה שמוצגת באירוע: הוא נסגר בזמן שהמארגן הגדיר.",
     duration: "24h", default: "משך ברירת המחדל",
   },
@@ -48,7 +48,7 @@ export default function Events() {
   return (
     <section id="events" aria-labelledby="events-title" dir={dir} className="relative mx-auto max-w-5xl scroll-mt-24 px-6 py-16 sm:py-24">
       <Reveal className="mx-auto max-w-2xl text-center">
-        <p className="text-xs font-bold uppercase tracking-[.24em] text-coral">EVENTS</p>
+        <p className="text-xs font-bold uppercase tracking-[.24em] text-coral">{copy.events}</p>
         <h2 id="events-title" className="mt-3 text-[clamp(2rem,4vw,3rem)] font-black leading-tight">{copy.title}</h2>
         <p className="mx-auto mt-4 max-w-xl text-muted">{copy.intro}</p>
       </Reveal>
